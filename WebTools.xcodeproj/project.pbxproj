@@ -12,7 +12,35 @@
 		E348F12B1F1A6FDF0057D6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E348F12A1F1A6FDF0057D6DA /* Assets.xcassets */; };
 		E348F12E1F1A6FDF0057D6DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E348F12C1F1A6FDF0057D6DA /* Main.storyboard */; };
 		E348F1311F1A6FDF0057D6DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1301F1A6FDF0057D6DA /* main.m */; };
+		E348F13F1F1A6FF00057D6DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E348F13E1F1A6FF00057D6DA /* Cocoa.framework */; };
+		E348F1431F1A6FF00057D6DA /* SourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1421F1A6FF00057D6DA /* SourceEditorExtension.m */; };
+		E348F1461F1A6FF00057D6DA /* SourceEditorCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1451F1A6FF00057D6DA /* SourceEditorCommand.m */; };
+		E348F14B1F1A6FF00057D6DA /* CSS Tools.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E348F13C1F1A6FF00057D6DA /* CSS Tools.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E348F1491F1A6FF00057D6DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E348F1191F1A6FDF0057D6DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E348F13B1F1A6FF00057D6DA;
+			remoteInfo = "CSS Tools";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E348F14F1F1A6FF00057D6DA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E348F14B1F1A6FF00057D6DA /* CSS Tools.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E348F1211F1A6FDF0057D6DA /* WebTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,6 +53,14 @@
 		E348F12F1F1A6FDF0057D6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E348F1301F1A6FDF0057D6DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E348F1321F1A6FDF0057D6DA /* WebTools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebTools.entitlements; sourceTree = "<group>"; };
+		E348F13C1F1A6FF00057D6DA /* CSS Tools.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CSS Tools.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E348F13E1F1A6FF00057D6DA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E348F1411F1A6FF00057D6DA /* SourceEditorExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourceEditorExtension.h; sourceTree = "<group>"; };
+		E348F1421F1A6FF00057D6DA /* SourceEditorExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SourceEditorExtension.m; sourceTree = "<group>"; };
+		E348F1441F1A6FF00057D6DA /* SourceEditorCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourceEditorCommand.h; sourceTree = "<group>"; };
+		E348F1451F1A6FF00057D6DA /* SourceEditorCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SourceEditorCommand.m; sourceTree = "<group>"; };
+		E348F1471F1A6FF00057D6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E348F1481F1A6FF00057D6DA /* CSS_Tools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CSS_Tools.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +71,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E348F1391F1A6FF00057D6DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E348F13F1F1A6FF00057D6DA /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -42,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				E348F1231F1A6FDF0057D6DA /* WebTools */,
+				E348F1401F1A6FF00057D6DA /* CSS Tools */,
+				E348F13D1F1A6FF00057D6DA /* Frameworks */,
 				E348F1221F1A6FDF0057D6DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				E348F1211F1A6FDF0057D6DA /* WebTools.app */,
+				E348F13C1F1A6FF00057D6DA /* CSS Tools.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +117,27 @@
 			path = WebTools;
 			sourceTree = "<group>";
 		};
+		E348F13D1F1A6FF00057D6DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E348F13E1F1A6FF00057D6DA /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E348F1401F1A6FF00057D6DA /* CSS Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E348F1411F1A6FF00057D6DA /* SourceEditorExtension.h */,
+				E348F1421F1A6FF00057D6DA /* SourceEditorExtension.m */,
+				E348F1441F1A6FF00057D6DA /* SourceEditorCommand.h */,
+				E348F1451F1A6FF00057D6DA /* SourceEditorCommand.m */,
+				E348F1471F1A6FF00057D6DA /* Info.plist */,
+				E348F1481F1A6FF00057D6DA /* CSS_Tools.entitlements */,
+			);
+			path = "CSS Tools";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,15 +148,34 @@
 				E348F11D1F1A6FDF0057D6DA /* Sources */,
 				E348F11E1F1A6FDF0057D6DA /* Frameworks */,
 				E348F11F1F1A6FDF0057D6DA /* Resources */,
+				E348F14F1F1A6FF00057D6DA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E348F14A1F1A6FF00057D6DA /* PBXTargetDependency */,
 			);
 			name = WebTools;
 			productName = WebTools;
 			productReference = E348F1211F1A6FDF0057D6DA /* WebTools.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E348F13B1F1A6FF00057D6DA /* CSS Tools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E348F14C1F1A6FF00057D6DA /* Build configuration list for PBXNativeTarget "CSS Tools" */;
+			buildPhases = (
+				E348F1381F1A6FF00057D6DA /* Sources */,
+				E348F1391F1A6FF00057D6DA /* Frameworks */,
+				E348F13A1F1A6FF00057D6DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CSS Tools";
+			productName = "CSS Tools";
+			productReference = E348F13C1F1A6FF00057D6DA /* CSS Tools.appex */;
+			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +187,9 @@
 				ORGANIZATIONNAME = dstrokis;
 				TargetAttributes = {
 					E348F1201F1A6FDF0057D6DA = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					E348F13B1F1A6FF00057D6DA = {
 						CreatedOnToolsVersion = 9.0;
 					};
 				};
@@ -118,6 +208,7 @@
 			projectRoot = "";
 			targets = (
 				E348F1201F1A6FDF0057D6DA /* WebTools */,
+				E348F13B1F1A6FF00057D6DA /* CSS Tools */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +220,13 @@
 			files = (
 				E348F12B1F1A6FDF0057D6DA /* Assets.xcassets in Resources */,
 				E348F12E1F1A6FDF0057D6DA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E348F13A1F1A6FF00057D6DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +243,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E348F1381F1A6FF00057D6DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E348F1431F1A6FF00057D6DA /* SourceEditorExtension.m in Sources */,
+				E348F1461F1A6FF00057D6DA /* SourceEditorCommand.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E348F14A1F1A6FF00057D6DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E348F13B1F1A6FF00057D6DA /* CSS Tools */;
+			targetProxy = E348F1491F1A6FF00057D6DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E348F12C1F1A6FDF0057D6DA /* Main.storyboard */ = {
@@ -286,6 +401,34 @@
 			};
 			name = Release;
 		};
+		E348F14D1F1A6FF00057D6DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "CSS Tools/CSS_Tools.entitlements";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SWP5WTP5JJ;
+				INFOPLIST_FILE = "CSS Tools/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dstrokis.WebTools.CSS-Tools";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E348F14E1F1A6FF00057D6DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "CSS Tools/CSS_Tools.entitlements";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SWP5WTP5JJ;
+				INFOPLIST_FILE = "CSS Tools/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dstrokis.WebTools.CSS-Tools";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -303,6 +446,14 @@
 			buildConfigurations = (
 				E348F1361F1A6FDF0057D6DA /* Debug */,
 				E348F1371F1A6FDF0057D6DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E348F14C1F1A6FF00057D6DA /* Build configuration list for PBXNativeTarget "CSS Tools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E348F14D1F1A6FF00057D6DA /* Debug */,
+				E348F14E1F1A6FF00057D6DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
