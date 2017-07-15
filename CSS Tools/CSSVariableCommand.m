@@ -10,38 +10,49 @@
 
 @implementation CSSVariableCommand
 
-static NSString *CSSErrorDomain = @"com.dstrokis.WebTools.CSS-Tools.Error";
-static NSString *kUTTypeCSS = @"public.css";
-
-typedef NS_ENUM(NSUInteger, CSSErrorCode) {
-    CSSErrorNotCSS
-};
-
 - (void)performCommandWithInvocation:(XCSourceEditorCommandInvocation *)invocation completionHandler:(void (^)(NSError * _Nullable nilOrError))completionHandler
 {
-    BOOL isCSS = [[[invocation buffer] contentUTI] isEqualToString:kUTTypeCSS];
-    
-    if (!isCSS) {
-        NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"The UTI of the buffer was not \"public.css\"." };
-        NSError *error = [NSError errorWithDomain:CSSErrorDomain
-                                             code:CSSErrorNotCSS
-                                         userInfo:userInfo];
+    NSError *error;
+    if (![self content:[invocation buffer] IsCSS:&error]) {
         completionHandler(error);
         return;
     }
     
-    NSString *cssVariableLiteral = @"--#variable : #value";
+    NSString *cssVariableLiteral = @"--<#variable#> : <#value#>";
+    NSInteger insertionIndex = 0;
     
-    [[[invocation buffer] lines] insertObject:cssVariableLiteral atIndex:0];
+    BOOL replacesLine = NO;
     
     // If user selected text, let's just put the variable at the top
-//    NSArray <XCSourceTextRange *> *selections = [[invocation buffer] selections];
-//    if ([selections count] > 0) {
-//        XCSourceTextPosition start =  [[selections firstObject] start];
-//        XCSourceTextPosition insertionPoint = XCSourceTextPositionMake(start.line - 1, 0);
-//    }
+    NSArray <XCSourceTextRange *> *selections = [[invocation buffer] selections];
+    if ([selections count] > 0) {
+        XCSourceTextPosition start =  [[selections firstObject] start];
+        
+        NSString *cursorLine = [[[invocation buffer] lines] objectAtIndex:start.line];
+        NSString *trimmedLine = [cursorLine stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (![trimmedLine length]) {
+            replacesLine = YES;
+        }
+        
+        insertionIndex = start.line;
+        
+        //FIXME: take into account tabs vs. spaces here
+        NSString *spaces = [NSString string];
+        NSUInteger i;
+        for (i = 0; i < start.column; i++) {
+            spaces = [spaces stringByAppendingString:@" "];
+        }
+        
+        cssVariableLiteral = [spaces stringByAppendingString:cssVariableLiteral];
+    }
     
-    
+    if (replacesLine) {
+        [[[invocation buffer] lines] replaceObjectAtIndex:insertionIndex
+                                               withObject:cssVariableLiteral];
+    } else {
+        [[[invocation buffer] lines] insertObject:cssVariableLiteral
+                                          atIndex:insertionIndex];
+    }
     
     completionHandler(nil);
 }

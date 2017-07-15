@@ -1,5 +1,5 @@
 //
-//  SourceEditorCommand.h
+//  CSSPrefixCommand.h
 //  CSS Tools
 //
 //  Created by Daniel Strokis on 7/15/17.
@@ -9,6 +9,6 @@
 #import <XcodeKit/XcodeKit.h>
 #import "CSSCommand.h"
 
-@interface CSSVariableCommand : CSSCommand <XCSourceEditorCommand>
+@interface CSSPrefixCommand : CSSCommand <XCSourceEditorCommand>
 
 @end

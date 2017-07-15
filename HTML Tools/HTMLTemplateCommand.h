@@ -1,14 +1,13 @@
 //
 //  SourceEditorCommand.h
-//  CSS Tools
+//  HTML Tools
 //
 //  Created by Daniel Strokis on 7/15/17.
 //  Copyright © 2017 dstrokis. All rights reserved.
 //
 
 #import <XcodeKit/XcodeKit.h>
-#import "CSSCommand.h"
 
-@interface CSSVariableCommand : CSSCommand <XCSourceEditorCommand>
+@interface HTMLTemplateCommand : NSObject <XCSourceEditorCommand>
 
 @end
