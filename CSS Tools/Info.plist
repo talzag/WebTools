@@ -30,15 +30,15 @@
 			<array>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
-					<string>SourceEditorCommand</string>
+					<string>CSSVariableCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
-					<string>$(PRODUCT_BUNDLE_IDENTIFIER).SourceEditorCommand</string>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).NewCSSVariable</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Source Editor Command</string>
+					<string>Create new CSS Variable</string>
 				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
-			<string>SourceEditorExtension</string>
+			<string>CSSSourceEditorExtension</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.dt.Xcode.extension.source-editor</string>
