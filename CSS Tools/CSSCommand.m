@@ -17,13 +17,20 @@ static NSString *kUTTypeCSS = @"public.css";
     BOOL isCSS = [[buffer contentUTI] isEqualToString:kUTTypeCSS];
     
     if (!isCSS) {
-        NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"The UTI of the buffer was not \"public.css\"." };
+        NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"The file isn't a CSS file." };
         *error = [NSError errorWithDomain:CSSErrorDomain
                                      code:CSSErrorNotCSS
                                  userInfo:userInfo];
     }
     
     return isCSS;
+}
+
+- (BOOL)shouldReplaceLineAtPosition:(XCSourceTextPosition)position InBuffer:(XCSourceTextBuffer *)buffer {
+    NSString *cursorLine = [[buffer lines] objectAtIndex:position.line];
+    NSString *trimmedLine = [cursorLine stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    return [trimmedLine length] == 0;
 }
 
 @end

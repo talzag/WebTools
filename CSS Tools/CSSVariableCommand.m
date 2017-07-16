@@ -14,44 +14,36 @@
 {
     NSError *error;
     if (![self content:[invocation buffer] IsCSS:&error]) {
-        completionHandler(error);
+        completionHandler(nil);
         return;
     }
     
     NSString *cssVariableLiteral = @"--<#variable#> : <#value#>";
-    NSInteger insertionIndex = 0;
     
-    BOOL replacesLine = NO;
+    // If user selected text, let's just put the variable at the top of the selection
+    XCSourceTextPosition start =  [[[[invocation buffer] selections] firstObject] start];
     
-    // If user selected text, let's just put the variable at the top
-    NSArray <XCSourceTextRange *> *selections = [[invocation buffer] selections];
-    if ([selections count] > 0) {
-        XCSourceTextPosition start =  [[selections firstObject] start];
-        
-        NSString *cursorLine = [[[invocation buffer] lines] objectAtIndex:start.line];
-        NSString *trimmedLine = [cursorLine stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (![trimmedLine length]) {
-            replacesLine = YES;
-        }
-        
-        insertionIndex = start.line;
-        
-        //FIXME: take into account tabs vs. spaces here
-        NSString *spaces = [NSString string];
-        NSUInteger i;
-        for (i = 0; i < start.column; i++) {
-            spaces = [spaces stringByAppendingString:@" "];
-        }
-        
-        cssVariableLiteral = [spaces stringByAppendingString:cssVariableLiteral];
+    //FIXME: take into account tabs vs. spaces here
+    NSString *spaces = [NSString string];
+    NSUInteger i;
+    for (i = 0; i < start.column; i++) {
+        spaces = [spaces stringByAppendingString:@" "];
+    }
+
+    cssVariableLiteral = [spaces stringByAppendingString:cssVariableLiteral];
+    
+    // if cursor is on an empty line, we can replace the empty line with the variable literal
+    // otherwise push the line down and insert the variable above it
+    if ([self shouldReplaceLineAtPosition:start InBuffer:[invocation buffer]]) {
+        [[[invocation buffer] lines] replaceObjectAtIndex:start.line withObject:cssVariableLiteral];
+    } else {
+        [[[invocation buffer] lines] insertObject:cssVariableLiteral atIndex:start.line];
     }
     
-    if (replacesLine) {
-        [[[invocation buffer] lines] replaceObjectAtIndex:insertionIndex
-                                               withObject:cssVariableLiteral];
-    } else {
-        [[[invocation buffer] lines] insertObject:cssVariableLiteral
-                                          atIndex:insertionIndex];
+    XCSourceTextPosition end = XCSourceTextPositionMake(start.line, start.column + cssVariableLiteral.length - 1);
+    XCSourceTextRange *literalSelection = [[XCSourceTextRange alloc] initWithStart:start end:end];
+    if (literalSelection) {
+        [[[invocation buffer] selections] setArray:@[literalSelection]];
     }
     
     completionHandler(nil);

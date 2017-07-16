@@ -6,7 +6,6 @@
 //  Copyright © 2017 dstrokis. All rights reserved.
 //
 
-#import <XcodeKit/XcodeKit.h>
 #import "CSSCommand.h"
 
 @interface CSSVariableCommand : CSSCommand <XCSourceEditorCommand>

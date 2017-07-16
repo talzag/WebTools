@@ -15,7 +15,7 @@
 {
     NSError *error;
     if (![self content:[invocation buffer] IsCSS:&error]) {
-        completionHandler(error);
+        completionHandler(nil);
         return;
     }
     

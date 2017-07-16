@@ -29,6 +29,8 @@ typedef NS_ENUM(NSUInteger, CSSErrorCode) {
  */
 - (BOOL)content:(XCSourceTextBuffer *)buffer IsCSS:(NSError **)error;
 
+- (BOOL)shouldReplaceLineAtPosition:(XCSourceTextPosition)position InBuffer:(XCSourceTextBuffer *)buffer;
+
 @end
 
 NS_ASSUME_NONNULL_END
