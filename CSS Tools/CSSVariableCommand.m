@@ -13,7 +13,7 @@
 - (void)performCommandWithInvocation:(XCSourceEditorCommandInvocation *)invocation completionHandler:(void (^)(NSError * _Nullable nilOrError))completionHandler
 {
     NSError *error;
-    if (![self content:[invocation buffer] IsCSS:&error]) {
+    if (![self content:[invocation buffer] isCSS:&error]) {
         completionHandler(nil);
         return;
     }
@@ -34,7 +34,7 @@
     
     // if cursor is on an empty line, we can replace the empty line with the variable literal
     // otherwise push the line down and insert the variable above it
-    if ([self shouldReplaceLineAtPosition:start InBuffer:[invocation buffer]]) {
+    if ([self shouldReplaceLineAtPosition:start inBuffer:[invocation buffer]]) {
         [[[invocation buffer] lines] replaceObjectAtIndex:start.line withObject:cssVariableLiteral];
     } else {
         [[[invocation buffer] lines] insertObject:cssVariableLiteral atIndex:start.line];

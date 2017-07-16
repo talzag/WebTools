@@ -14,7 +14,7 @@
                    completionHandler:(nonnull void (^)(NSError * _Nullable))completionHandler
 {
     NSError *error;
-    if (![self content:[invocation buffer] IsCSS:&error]) {
+    if (![self content:[invocation buffer] isCSS:&error]) {
         completionHandler(nil);
         return;
     }

@@ -13,7 +13,7 @@ static NSString *kUTTypeCSS = @"public.css";
 
 @implementation CSSCommand
 
-- (BOOL)content:(XCSourceTextBuffer *)buffer IsCSS:(NSError * _Nullable __autoreleasing *)error {
+- (BOOL)content:(XCSourceTextBuffer *)buffer isCSS:(NSError * _Nullable __autoreleasing *)error {
     BOOL isCSS = [[buffer contentUTI] isEqualToString:kUTTypeCSS];
     
     if (!isCSS) {
@@ -26,7 +26,7 @@ static NSString *kUTTypeCSS = @"public.css";
     return isCSS;
 }
 
-- (BOOL)shouldReplaceLineAtPosition:(XCSourceTextPosition)position InBuffer:(XCSourceTextBuffer *)buffer {
+- (BOOL)shouldReplaceLineAtPosition:(XCSourceTextPosition)position inBuffer:(XCSourceTextBuffer *)buffer {
     NSString *cursorLine = [[buffer lines] objectAtIndex:position.line];
     NSString *trimmedLine = [cursorLine stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
