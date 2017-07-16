@@ -10,6 +10,7 @@
 
 static NSString *HTMLCommandID = @"HTMLTemplate";
 static NSString *PugCommandID = @"PugTemplate";
+static NSString *EJSCommandID = @"EJSTemplate";
 
 @implementation HTMLTemplateCommand
 
@@ -26,7 +27,7 @@ static NSString *PugCommandID = @"PugTemplate";
    @"<!DOCTYPE html>\n"
     "<html>\n"
     "   <head>\n"
-    "       <title><#title#></title>\n"
+    "       <title><#HTML Template#></title>\n"
     "   </head>\n"
     "   <body>\n"
     "       \n"
@@ -37,8 +38,21 @@ static NSString *PugCommandID = @"PugTemplate";
    @"doctype html\n"
     "html\n"
     "   head\n"
-    "       title= <#title#>\n"
+    "       title= <#Pug Template#>\n"
     "   body\n";
+    
+    NSString *ejsTemplate =
+   @"<!DOCTYPE html>\n"
+    "<html>\n"
+    "   <head>\n"
+    "       <% var title = 'EJS Template' %>\n"
+    "       <title><%= title %></title>\n"
+    "   </head>\n"
+    "   <body>\n"
+    "       <% var greeting = 'Hello, world!' %>\n"
+    "       <h1><%= greeting %></h1>\n"
+    "   </body>\n"
+    "</html>\n";
     
     NSString *command = [[[invocation commandIdentifier] componentsSeparatedByString:@"."] lastObject];
     
@@ -47,6 +61,16 @@ static NSString *PugCommandID = @"PugTemplate";
         docTemplate = htmlTemplate;
     } else if ([command isEqualToString:PugCommandID]) {
         docTemplate = pugTemplate;
+    } else if ([command isEqualToString:EJSCommandID]) {
+        docTemplate = ejsTemplate;
+    } else {
+        NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"Unrecognized command identifier." };
+        error = [NSError errorWithDomain:(NSString *)HTMLErrorDomain
+                                    code:HTMLErrorNotHTML
+                                userInfo:userInfo];
+        
+        completionHandler(error);
+        return;
     }
     
     [[[invocation buffer] lines] insertObject:docTemplate atIndex:0];
