@@ -36,6 +36,14 @@
 					<key>XCSourceEditorCommandName</key>
 					<string>Insert HTML template</string>
 				</dict>
+				<dict>
+					<key>XCSourceEditorCommandClassName</key>
+					<string>HTMLTemplateCommand</string>
+					<key>XCSourceEditorCommandIdentifier</key>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).PugTemplate</string>
+					<key>XCSourceEditorCommandName</key>
+					<string>Insert Pug template</string>
+				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
 			<string>HTMLSourceEditorExtension</string>

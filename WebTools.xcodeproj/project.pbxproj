@@ -26,6 +26,7 @@
 		E348F14B1F1A6FF00057D6DA /* CSS Tools.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E348F13C1F1A6FF00057D6DA /* CSS Tools.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E348F1541F1A70C50057D6DA /* CSSSourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1521F1A703D0057D6DA /* CSSSourceEditorExtension.m */; };
 		E348F1551F1A70C50057D6DA /* CSSVariableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1501F1A703D0057D6DA /* CSSVariableCommand.m */; };
+		E39F16EB1F1BFDB600FDC12F /* HTMLCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */; };
 		E3A8633B1F1BCB2B003B3645 /* CSSQueryCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,8 @@
 		E348F1511F1A703D0057D6DA /* CSSVariableCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSVariableCommand.h; sourceTree = "<group>"; };
 		E348F1521F1A703D0057D6DA /* CSSSourceEditorExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSSourceEditorExtension.m; sourceTree = "<group>"; };
 		E348F1531F1A703D0057D6DA /* CSSSourceEditorExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSSourceEditorExtension.h; sourceTree = "<group>"; };
+		E39F16E91F1BFDB600FDC12F /* HTMLCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLCommand.h; sourceTree = "<group>"; };
+		E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLCommand.m; sourceTree = "<group>"; };
 		E3A863391F1BCB2B003B3645 /* CSSQueryCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSQueryCommand.h; sourceTree = "<group>"; };
 		E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSQueryCommand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +153,8 @@
 			children = (
 				E33279971F1A7DFB00CE167A /* HTMLSourceEditorExtension.h */,
 				E33279981F1A7DFB00CE167A /* HTMLSourceEditorExtension.m */,
+				E39F16E91F1BFDB600FDC12F /* HTMLCommand.h */,
+				E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */,
 				E332799A1F1A7DFB00CE167A /* HTMLTemplateCommand.h */,
 				E332799B1F1A7DFB00CE167A /* HTMLTemplateCommand.m */,
 				E332799D1F1A7DFB00CE167A /* Info.plist */,
@@ -407,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39F16EB1F1BFDB600FDC12F /* HTMLCommand.m in Sources */,
 				E33279991F1A7DFB00CE167A /* HTMLSourceEditorExtension.m in Sources */,
 				E332799C1F1A7DFB00CE167A /* HTMLTemplateCommand.m in Sources */,
 			);

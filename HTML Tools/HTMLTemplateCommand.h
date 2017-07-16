@@ -6,8 +6,8 @@
 //  Copyright © 2017 dstrokis. All rights reserved.
 //
 
-#import <XcodeKit/XcodeKit.h>
+#import "HTMLCommand.h"
 
-@interface HTMLTemplateCommand : NSObject <XCSourceEditorCommand>
+@interface HTMLTemplateCommand : HTMLCommand <XCSourceEditorCommand>
 
 @end

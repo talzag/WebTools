@@ -8,29 +8,21 @@
 
 #import "HTMLTemplateCommand.h"
 
-static NSString *HTMLErrorDomain = @"com.dstrokis.WebTools.HTML-Tools.Error";
-
-typedef NS_ENUM(NSUInteger, HTMLErrorCode) {
-    HTMLErrorNotHTML
-};
+static NSString *HTMLCommandID = @"HTMLTemplate";
+static NSString *PugCommandID = @"PugTemplate";
 
 @implementation HTMLTemplateCommand
 
 - (void)performCommandWithInvocation:(XCSourceEditorCommandInvocation *)invocation
                    completionHandler:(void (^)(NSError * _Nullable nilOrError))completionHandler
 {
-    BOOL isHTML = [[[invocation buffer] contentUTI] isEqualToString:(__bridge NSString *)kUTTypeHTML];
-    
-    if (!isHTML) {
-        NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"The UTI of the buffer was not \"public.html\"." };
-        NSError *error = [NSError errorWithDomain:HTMLErrorDomain
-                                             code:HTMLErrorNotHTML
-                                         userInfo:userInfo];
-        completionHandler(error);
+    NSError *error;
+    if (![self content:[invocation buffer] isHTML:&error]) {
+        completionHandler(nil);
         return;
     }
     
-    NSString *htmlDocTemplate =
+    NSString *htmlTemplate =
    @"<!DOCTYPE html>\n"
     "<html>\n"
     "   <head>\n"
@@ -41,9 +33,26 @@ typedef NS_ENUM(NSUInteger, HTMLErrorCode) {
     "   </body>\n"
     "</html>\n";
     
-    [[[invocation buffer] lines] insertObject:htmlDocTemplate atIndex:0];
+    NSString *pugTemplate =
+   @"doctype html\n"
+    "html\n"
+    "   head\n"
+    "       title= <#title#>\n"
+    "   body\n";
+    
+    NSString *command = [[[invocation commandIdentifier] componentsSeparatedByString:@"."] lastObject];
+    
+    NSString *docTemplate;
+    if ([command isEqualToString:HTMLCommandID]) {
+        docTemplate = htmlTemplate;
+    } else if ([command isEqualToString:PugCommandID]) {
+        docTemplate = pugTemplate;
+    }
+    
+    [[[invocation buffer] lines] insertObject:docTemplate atIndex:0];
     
     completionHandler(nil);
 }
 
 @end
+
