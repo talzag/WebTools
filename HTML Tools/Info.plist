@@ -34,7 +34,7 @@
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).HTMLTemplate</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Insert HTML template</string>
+					<string>Create new HTML template</string>
 				</dict>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
@@ -42,7 +42,7 @@
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).PugTemplate</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Insert Pug template</string>
+					<string>Create new Pug template</string>
 				</dict>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
@@ -50,7 +50,7 @@
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).EJSTemplate</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Insert EJS template</string>
+					<string>Create new EJS template</string>
 				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>

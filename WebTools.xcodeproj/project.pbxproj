@@ -14,8 +14,8 @@
 		E33279A71F1A89C000CE167A /* CSSPrefixCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279A61F1A89C000CE167A /* CSSPrefixCommand.m */; };
 		E33279AA1F1A8A8C00CE167A /* CSSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279A91F1A8A8C00CE167A /* CSSCommand.m */; };
 		E33279B01F1A8E4300CE167A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E348F13E1F1A6FF00057D6DA /* Cocoa.framework */; };
-		E33279B41F1A8E4300CE167A /* SourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279B31F1A8E4300CE167A /* SourceEditorExtension.m */; };
-		E33279B71F1A8E4300CE167A /* SourceEditorCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279B61F1A8E4300CE167A /* SourceEditorCommand.m */; };
+		E33279B41F1A8E4300CE167A /* JSSourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279B31F1A8E4300CE167A /* JSSourceEditorExtension.m */; };
+		E33279B71F1A8E4300CE167A /* JSTemplateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279B61F1A8E4300CE167A /* JSTemplateCommand.m */; };
 		E33279BC1F1A8E4300CE167A /* JS Tools.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E33279AF1F1A8E4300CE167A /* JS Tools.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E348F1261F1A6FDF0057D6DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1251F1A6FDF0057D6DA /* AppDelegate.m */; };
 		E348F1291F1A6FDF0057D6DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1281F1A6FDF0057D6DA /* ViewController.m */; };
@@ -28,6 +28,7 @@
 		E348F1551F1A70C50057D6DA /* CSSVariableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1501F1A703D0057D6DA /* CSSVariableCommand.m */; };
 		E39F16EB1F1BFDB600FDC12F /* HTMLCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */; };
 		E3A8633B1F1BCB2B003B3645 /* CSSQueryCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */; };
+		E3F39E5A1F1CF5FF0027EEC7 /* JSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F39E591F1CF5FF0027EEC7 /* JSCommand.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,10 +84,10 @@
 		E33279A81F1A8A8C00CE167A /* CSSCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSCommand.h; sourceTree = "<group>"; };
 		E33279A91F1A8A8C00CE167A /* CSSCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSCommand.m; sourceTree = "<group>"; };
 		E33279AF1F1A8E4300CE167A /* JS Tools.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "JS Tools.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E33279B21F1A8E4300CE167A /* SourceEditorExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourceEditorExtension.h; sourceTree = "<group>"; };
-		E33279B31F1A8E4300CE167A /* SourceEditorExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SourceEditorExtension.m; sourceTree = "<group>"; };
-		E33279B51F1A8E4300CE167A /* SourceEditorCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourceEditorCommand.h; sourceTree = "<group>"; };
-		E33279B61F1A8E4300CE167A /* SourceEditorCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SourceEditorCommand.m; sourceTree = "<group>"; };
+		E33279B21F1A8E4300CE167A /* JSSourceEditorExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSourceEditorExtension.h; sourceTree = "<group>"; };
+		E33279B31F1A8E4300CE167A /* JSSourceEditorExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSourceEditorExtension.m; sourceTree = "<group>"; };
+		E33279B51F1A8E4300CE167A /* JSTemplateCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTemplateCommand.h; sourceTree = "<group>"; };
+		E33279B61F1A8E4300CE167A /* JSTemplateCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTemplateCommand.m; sourceTree = "<group>"; };
 		E33279B81F1A8E4300CE167A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E33279B91F1A8E4300CE167A /* JS_Tools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JS_Tools.entitlements; sourceTree = "<group>"; };
 		E348F1211F1A6FDF0057D6DA /* WebTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +112,8 @@
 		E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLCommand.m; sourceTree = "<group>"; };
 		E3A863391F1BCB2B003B3645 /* CSSQueryCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSQueryCommand.h; sourceTree = "<group>"; };
 		E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSQueryCommand.m; sourceTree = "<group>"; };
+		E3F39E581F1CF5FF0027EEC7 /* JSCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCommand.h; sourceTree = "<group>"; };
+		E3F39E591F1CF5FF0027EEC7 /* JSCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCommand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,10 +169,12 @@
 		E33279B11F1A8E4300CE167A /* JS Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E33279B21F1A8E4300CE167A /* SourceEditorExtension.h */,
-				E33279B31F1A8E4300CE167A /* SourceEditorExtension.m */,
-				E33279B51F1A8E4300CE167A /* SourceEditorCommand.h */,
-				E33279B61F1A8E4300CE167A /* SourceEditorCommand.m */,
+				E33279B21F1A8E4300CE167A /* JSSourceEditorExtension.h */,
+				E33279B31F1A8E4300CE167A /* JSSourceEditorExtension.m */,
+				E3F39E581F1CF5FF0027EEC7 /* JSCommand.h */,
+				E3F39E591F1CF5FF0027EEC7 /* JSCommand.m */,
+				E33279B51F1A8E4300CE167A /* JSTemplateCommand.h */,
+				E33279B61F1A8E4300CE167A /* JSTemplateCommand.m */,
 				E33279B81F1A8E4300CE167A /* Info.plist */,
 				E33279B91F1A8E4300CE167A /* JS_Tools.entitlements */,
 			);
@@ -422,8 +427,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E33279B41F1A8E4300CE167A /* SourceEditorExtension.m in Sources */,
-				E33279B71F1A8E4300CE167A /* SourceEditorCommand.m in Sources */,
+				E3F39E5A1F1CF5FF0027EEC7 /* JSCommand.m in Sources */,
+				E33279B41F1A8E4300CE167A /* JSSourceEditorExtension.m in Sources */,
+				E33279B71F1A8E4300CE167A /* JSTemplateCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

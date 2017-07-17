@@ -15,7 +15,8 @@ static NSString const *CSSErrorDomain;
 static NSString const *kUTTypeCSS;
 
 typedef NS_ENUM(NSUInteger, CSSErrorCode) {
-    CSSErrorNotCSS
+    CSSErrorNotCSS,
+    CSSErrorUnrecognizedCommand
 };
 
 @interface CSSCommand : NSObject

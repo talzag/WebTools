@@ -6,9 +6,9 @@
 //  Copyright © 2017 dstrokis. All rights reserved.
 //
 
-#import "SourceEditorExtension.h"
+#import "JSSourceEditorExtension.h"
 
-@implementation SourceEditorExtension
+@implementation JSSourceEditorExtension
 
 /*
 - (void)extensionDidFinishLaunching

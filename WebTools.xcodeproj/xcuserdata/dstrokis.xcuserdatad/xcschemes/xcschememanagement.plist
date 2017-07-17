@@ -7,17 +7,17 @@
 		<key>CSS Tools.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>HTML Tools.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>JS Tools.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>WebTools.xcscheme</key>
 		<dict>
@@ -28,6 +28,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>E33279931F1A7DFB00CE167A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E33279AE1F1A8E4300CE167A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

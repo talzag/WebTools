@@ -66,7 +66,7 @@ static NSString *EJSCommandID = @"EJSTemplate";
     } else {
         NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"Unrecognized command identifier." };
         error = [NSError errorWithDomain:(NSString *)HTMLErrorDomain
-                                    code:HTMLErrorNotHTML
+                                    code:HTMLErrorUnrecognizedCommand
                                 userInfo:userInfo];
         
         completionHandler(error);

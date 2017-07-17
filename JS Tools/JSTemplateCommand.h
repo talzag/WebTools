@@ -6,8 +6,8 @@
 //  Copyright © 2017 dstrokis. All rights reserved.
 //
 
-#import <XcodeKit/XcodeKit.h>
+#import "JSCommand.h"
 
-@interface SourceEditorCommand : NSObject <XCSourceEditorCommand>
+@interface JSTemplateCommand : JSCommand <XCSourceEditorCommand>
 
 @end

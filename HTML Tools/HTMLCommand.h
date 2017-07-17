@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 static NSString const *HTMLErrorDomain;
 
 typedef NS_ENUM(NSUInteger, HTMLErrorCode) {
-    HTMLErrorNotHTML
+    HTMLErrorNotHTML,
+    HTMLErrorUnrecognizedCommand
 };
 
 @interface HTMLCommand : NSObject 
