@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface InstructionsPageController : NSPageController <NSPageControllerDelegate>
+#import "Instruction.h"
 
+@interface InstructionsPageController : NSPageController <NSPageControllerDelegate>
 
 @end
 

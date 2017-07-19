@@ -27,6 +27,7 @@
 		E348F14B1F1A6FF00057D6DA /* CSS Tools.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E348F13C1F1A6FF00057D6DA /* CSS Tools.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E348F1541F1A70C50057D6DA /* CSSSourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1521F1A703D0057D6DA /* CSSSourceEditorExtension.m */; };
 		E348F1551F1A70C50057D6DA /* CSSVariableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1501F1A703D0057D6DA /* CSSVariableCommand.m */; };
+		E34B04901F1F9E2C00CE1660 /* Instruction.m in Sources */ = {isa = PBXBuildFile; fileRef = E34B048F1F1F9E2C00CE1660 /* Instruction.m */; };
 		E39F16EB1F1BFDB600FDC12F /* HTMLCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */; };
 		E3A8633B1F1BCB2B003B3645 /* CSSQueryCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */; };
 		E3F39E5A1F1CF5FF0027EEC7 /* JSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F39E591F1CF5FF0027EEC7 /* JSCommand.m */; };
@@ -111,6 +112,8 @@
 		E348F1511F1A703D0057D6DA /* CSSVariableCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSVariableCommand.h; sourceTree = "<group>"; };
 		E348F1521F1A703D0057D6DA /* CSSSourceEditorExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSSourceEditorExtension.m; sourceTree = "<group>"; };
 		E348F1531F1A703D0057D6DA /* CSSSourceEditorExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSSourceEditorExtension.h; sourceTree = "<group>"; };
+		E34B048E1F1F9E2C00CE1660 /* Instruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instruction.h; sourceTree = "<group>"; };
+		E34B048F1F1F9E2C00CE1660 /* Instruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instruction.m; sourceTree = "<group>"; };
 		E39F16E91F1BFDB600FDC12F /* HTMLCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLCommand.h; sourceTree = "<group>"; };
 		E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLCommand.m; sourceTree = "<group>"; };
 		E3A863391F1BCB2B003B3645 /* CSSQueryCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSQueryCommand.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 			children = (
 				E348F1241F1A6FDF0057D6DA /* AppDelegate.h */,
 				E348F1251F1A6FDF0057D6DA /* AppDelegate.m */,
+				E34B048E1F1F9E2C00CE1660 /* Instruction.h */,
+				E34B048F1F1F9E2C00CE1660 /* Instruction.m */,
 				E348F1271F1A6FDF0057D6DA /* InstructionsPageController.h */,
 				E348F1281F1A6FDF0057D6DA /* InstructionsPageController.m */,
 				E33C84351F1D4CA600CB6283 /* InstructionViewController.h */,
@@ -446,6 +451,7 @@
 				E348F1311F1A6FDF0057D6DA /* main.m in Sources */,
 				E348F1261F1A6FDF0057D6DA /* AppDelegate.m in Sources */,
 				E33C84371F1D4CA600CB6283 /* InstructionViewController.m in Sources */,
+				E34B04901F1F9E2C00CE1660 /* Instruction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "Instruction.h"
+
 @interface InstructionViewController : NSViewController
 
 @property (weak) IBOutlet NSImageView *imageView;
 @property (weak) IBOutlet NSTextField *instructionsTextField;
 
-@property NSString *instructions;
+@property Instruction *instruction;
 
 @end

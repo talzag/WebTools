@@ -44,14 +44,6 @@
 					<key>XCSourceEditorCommandName</key>
 					<string>Create new @media query</string>
 				</dict>
-				<dict>
-					<key>XCSourceEditorCommandClassName</key>
-					<string>CSSPrefixCommand</string>
-					<key>XCSourceEditorCommandIdentifier</key>
-					<string>$(PRODUCT_BUNDLE_IDENTIFIER).BrowserPrefixes</string>
-					<key>XCSourceEditorCommandName</key>
-					<string>Add browser prefixes</string>
-				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
 			<string>CSSSourceEditorExtension</string>

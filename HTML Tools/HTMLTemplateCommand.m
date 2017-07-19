@@ -17,12 +17,6 @@ static NSString *EJSCommandID = @"EJSTemplate";
 - (void)performCommandWithInvocation:(XCSourceEditorCommandInvocation *)invocation
                    completionHandler:(void (^)(NSError * _Nullable nilOrError))completionHandler
 {
-    NSError *error;
-    if (![self content:[invocation buffer] isHTML:&error]) {
-        completionHandler(nil);
-        return;
-    }
-    
     NSString *htmlTemplate =
    @"<!DOCTYPE html>\n"
     "<html>\n"
@@ -45,19 +39,21 @@ static NSString *EJSCommandID = @"EJSTemplate";
    @"<!DOCTYPE html>\n"
     "<html>\n"
     "   <head>\n"
-    "       <% var title = 'EJS Template' %>\n"
+    "       <% var title = <#'EJS Template'#> %>\n"
     "       <title><%= title %></title>\n"
     "   </head>\n"
     "   <body>\n"
-    "       <% var greeting = 'Hello, world!' %>\n"
+    "       <% var greeting = <#'Hello, world!'#> %>\n"
     "       <h1><%= greeting %></h1>\n"
     "   </body>\n"
     "</html>\n";
     
     NSString *command = [[[invocation commandIdentifier] componentsSeparatedByString:@"."] lastObject];
     
+    NSError *error;
     NSString *docTemplate;
-    if ([command isEqualToString:HTMLCommandID]) {
+    
+    if ([command isEqualToString:HTMLCommandID] && [self content:[invocation buffer] isHTML:&error]) {
         docTemplate = htmlTemplate;
     } else if ([command isEqualToString:PugCommandID]) {
         docTemplate = pugTemplate;
