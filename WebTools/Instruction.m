@@ -8,6 +8,7 @@
 
 #import "Instruction.h"
 
+#define kInstallImageName @"Install"
 #define kHTMLImageName @"HTML"
 #define kCSSImageName @"CSS"
 #define kJSImageName @"JS"
@@ -22,6 +23,9 @@
         
         NSString *instructionName;
         switch (type) {
+            case WebToolsInstructionTypeInstall:
+                instructionName = kInstallImageName;
+                break;
             case WebToolsInstructionTypeHTML:
                 instructionName = kHTMLImageName;
                 break;
@@ -43,6 +47,9 @@
 }
 
 + (NSArray <Instruction *> *)appExtensionInstructions {
+    Instruction *installInstructins = [[Instruction alloc] initWithInstructionType:WebToolsInstructionTypeInstall
+                                                                andInstructionText:NSLocalizedString(@"Install_Text", @"How to install the extensions")];
+    
     Instruction *htmlInstructions = [[Instruction alloc] initWithInstructionType:WebToolsInstructionTypeHTML
                                                               andInstructionText:NSLocalizedString(@"HTML_Text", @"Features of the HTML tool")];
     
@@ -52,7 +59,7 @@
     Instruction *jsInstructions = [[Instruction alloc] initWithInstructionType:WebToolsInstructionTypeJS
                                                             andInstructionText:NSLocalizedString(@"JS_Text", @"Features of the JS tool")];
     
-    return @[htmlInstructions, cssInstructions, jsInstructions];
+    return @[installInstructins, htmlInstructions, cssInstructions, jsInstructions];
 }
 
 @end

@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 typedef NS_ENUM(NSUInteger, WebToolsInstructionType) {
+    WebToolsInstructionTypeInstall,
     WebToolsInstructionTypeHTML,
     WebToolsInstructionTypeCSS,
     WebToolsInstructionTypeJS
