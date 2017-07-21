@@ -1,0 +1,9 @@
+﻿/* Features of the CSS tool */
+"CSS_Text" = "Easily create variables and media queries.";
+
+/* Features of the HTML tool */
+"HTML_Text" = "Quickly insert templates for HTML5, Pug, and EJS templates.";
+
+/* Features of the JS tool */
+"JS_Text" = "Create new JavaScript classes using ES5 or ES6 syntax.";
+

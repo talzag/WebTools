@@ -44,13 +44,13 @@
 
 + (NSArray <Instruction *> *)appExtensionInstructions {
     Instruction *htmlInstructions = [[Instruction alloc] initWithInstructionType:WebToolsInstructionTypeHTML
-                                                              andInstructionText:@"HTML Instructions"];
+                                                              andInstructionText:NSLocalizedString(@"HTML_Text", @"Features of the HTML tool")];
     
     Instruction *cssInstructions = [[Instruction alloc] initWithInstructionType:WebToolsInstructionTypeCSS
-                                                             andInstructionText:@"CSS Instructions"];
+                                                             andInstructionText:NSLocalizedString(@"CSS_Text", @"Features of the CSS tool")];
     
     Instruction *jsInstructions = [[Instruction alloc] initWithInstructionType:WebToolsInstructionTypeJS
-                                                            andInstructionText:@"JS Instructions"];
+                                                            andInstructionText:NSLocalizedString(@"JS_Text", @"Features of the JS tool")];
     
     return @[htmlInstructions, cssInstructions, jsInstructions];
 }

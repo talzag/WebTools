@@ -28,6 +28,7 @@
 		E348F1541F1A70C50057D6DA /* CSSSourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1521F1A703D0057D6DA /* CSSSourceEditorExtension.m */; };
 		E348F1551F1A70C50057D6DA /* CSSVariableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1501F1A703D0057D6DA /* CSSVariableCommand.m */; };
 		E34B04901F1F9E2C00CE1660 /* Instruction.m in Sources */ = {isa = PBXBuildFile; fileRef = E34B048F1F1F9E2C00CE1660 /* Instruction.m */; };
+		E39111961F21A7410042B320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E39111941F21A7410042B320 /* Localizable.strings */; };
 		E39F16EB1F1BFDB600FDC12F /* HTMLCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */; };
 		E3A8633B1F1BCB2B003B3645 /* CSSQueryCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */; };
 		E3F39E5A1F1CF5FF0027EEC7 /* JSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F39E591F1CF5FF0027EEC7 /* JSCommand.m */; };
@@ -114,6 +115,7 @@
 		E348F1531F1A703D0057D6DA /* CSSSourceEditorExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSSourceEditorExtension.h; sourceTree = "<group>"; };
 		E34B048E1F1F9E2C00CE1660 /* Instruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instruction.h; sourceTree = "<group>"; };
 		E34B048F1F1F9E2C00CE1660 /* Instruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instruction.m; sourceTree = "<group>"; };
+		E39111951F21A7410042B320 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		E39F16E91F1BFDB600FDC12F /* HTMLCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLCommand.h; sourceTree = "<group>"; };
 		E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLCommand.m; sourceTree = "<group>"; };
 		E3A863391F1BCB2B003B3645 /* CSSQueryCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSQueryCommand.h; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				E33C84361F1D4CA600CB6283 /* InstructionViewController.m */,
 				E348F12A1F1A6FDF0057D6DA /* Assets.xcassets */,
 				E348F12C1F1A6FDF0057D6DA /* Main.storyboard */,
+				E39111931F21A7410042B320 /* en.lproj */,
 				E348F12F1F1A6FDF0057D6DA /* Info.plist */,
 				E348F1301F1A6FDF0057D6DA /* main.m */,
 				E348F1321F1A6FDF0057D6DA /* WebTools.entitlements */,
@@ -255,6 +258,14 @@
 				E348F1481F1A6FF00057D6DA /* CSS_Tools.entitlements */,
 			);
 			path = "CSS Tools";
+			sourceTree = "<group>";
+		};
+		E39111931F21A7410042B320 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				E39111941F21A7410042B320 /* Localizable.strings */,
+			);
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E348F12B1F1A6FDF0057D6DA /* Assets.xcassets in Resources */,
+				E39111961F21A7410042B320 /* Localizable.strings in Resources */,
 				E348F12E1F1A6FDF0057D6DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +506,14 @@
 				E348F12D1F1A6FDF0057D6DA /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E39111941F21A7410042B320 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E39111951F21A7410042B320 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
