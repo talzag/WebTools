@@ -4,6 +4,9 @@
 /* Features of the HTML tool */
 "HTML_Text" = "Quickly insert templates for HTML5, Pug, and EJS templates.";
 
+/* How to install the extensions */
+"Install_Text" = "Enable the extensions by going to \"System Preferences\" > \"Extensions\". Once enabled, the extensions are accessible via the \"Editor\" menu in Xcode.";
+
 /* Features of the JS tool */
 "JS_Text" = "Create new JavaScript classes using ES5 or ES6 syntax.";
 
