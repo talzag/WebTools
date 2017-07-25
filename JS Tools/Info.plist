@@ -44,6 +44,14 @@
 					<key>XCSourceEditorCommandName</key>
 					<string>Create new class template (ES6)</string>
 				</dict>
+				<dict>
+					<key>XCSourceEditorCommandClassName</key>
+					<string>JSCustomElementCommand</string>
+					<key>XCSourceEditorCommandIdentifier</key>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).NewElementES6</string>
+					<key>XCSourceEditorCommandName</key>
+					<string>Create new element template (ES6)</string>
+				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
 			<string>JSSourceEditorExtension</string>

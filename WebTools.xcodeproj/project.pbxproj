@@ -18,6 +18,7 @@
 		E33279B71F1A8E4300CE167A /* JSTemplateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279B61F1A8E4300CE167A /* JSTemplateCommand.m */; };
 		E33279BC1F1A8E4300CE167A /* JS Tools.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E33279AF1F1A8E4300CE167A /* JS Tools.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E33C84371F1D4CA600CB6283 /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33C84361F1D4CA600CB6283 /* InstructionViewController.m */; };
+		E347703F1F278C930047CE77 /* JSCustomElementCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E347703E1F278C930047CE77 /* JSCustomElementCommand.m */; };
 		E348F1261F1A6FDF0057D6DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1251F1A6FDF0057D6DA /* AppDelegate.m */; };
 		E348F1291F1A6FDF0057D6DA /* InstructionsPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1281F1A6FDF0057D6DA /* InstructionsPageController.m */; };
 		E348F12B1F1A6FDF0057D6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E348F12A1F1A6FDF0057D6DA /* Assets.xcassets */; };
@@ -95,6 +96,8 @@
 		E33279B91F1A8E4300CE167A /* JS_Tools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JS_Tools.entitlements; sourceTree = "<group>"; };
 		E33C84351F1D4CA600CB6283 /* InstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionViewController.h; sourceTree = "<group>"; };
 		E33C84361F1D4CA600CB6283 /* InstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionViewController.m; sourceTree = "<group>"; };
+		E347703D1F278C930047CE77 /* JSCustomElementCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCustomElementCommand.h; sourceTree = "<group>"; };
+		E347703E1F278C930047CE77 /* JSCustomElementCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCustomElementCommand.m; sourceTree = "<group>"; };
 		E348F1211F1A6FDF0057D6DA /* WebTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E348F1241F1A6FDF0057D6DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E348F1251F1A6FDF0057D6DA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				E3F39E591F1CF5FF0027EEC7 /* JSCommand.m */,
 				E33279B51F1A8E4300CE167A /* JSTemplateCommand.h */,
 				E33279B61F1A8E4300CE167A /* JSTemplateCommand.m */,
+				E347703D1F278C930047CE77 /* JSCustomElementCommand.h */,
+				E347703E1F278C930047CE77 /* JSCustomElementCommand.m */,
 				E33279B81F1A8E4300CE167A /* Info.plist */,
 				E33279B91F1A8E4300CE167A /* JS_Tools.entitlements */,
 			);
@@ -449,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E347703F1F278C930047CE77 /* JSCustomElementCommand.m in Sources */,
 				E3F39E5A1F1CF5FF0027EEC7 /* JSCommand.m in Sources */,
 				E33279B41F1A8E4300CE167A /* JSSourceEditorExtension.m in Sources */,
 				E33279B71F1A8E4300CE167A /* JSTemplateCommand.m in Sources */,
