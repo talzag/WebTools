@@ -20,9 +20,15 @@
     }
     
     NSString *customElementTemplate =
-    @"class <#ElementName > extends HTMLElement {\n"
-    ""
+   @"class <#ElementName > extends HTMLElement {\n"
+    "   constructor() {\n"
+    "       super();\n"
+    "       const shadowRoot = this.attachShadow({mode: 'closed'});\n"
+    "       shadowRoot.innerHTML = `<div>Hello from my custom element!</div>`\n"
+    "   }\n"
     "}\n"
+    "\n"
+    "customElements.define('<#element-name >', <#ElementName >);\n"
     "\n";
     
     // TODO: Check selections. Overwrite selected lines, or insert at cursor
