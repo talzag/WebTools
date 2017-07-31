@@ -44,6 +44,14 @@
 					<key>XCSourceEditorCommandName</key>
 					<string>Create new @media query</string>
 				</dict>
+				<dict>
+					<key>XCSourceEditorCommandClassName</key>
+					<string>CSSFormatCommand</string>
+					<key>XCSourceEditorCommandIdentifier</key>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).FormatCSS</string>
+					<key>XCSourceEditorCommandName</key>
+					<string>Format with Pretty Print</string>
+				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
 			<string>CSSSourceEditorExtension</string>
