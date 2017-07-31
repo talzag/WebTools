@@ -55,7 +55,16 @@ static NSString *FunctionClassCommandID = @"NewClassFunction";
         return;
     }
     
-    [[[invocation buffer] lines] insertObject:classTemplate atIndex:0];
+    NSMutableArray <NSString *> *lines = [[invocation buffer] lines];
+    NSMutableArray <XCSourceTextRange *> *selections = [[invocation buffer] selections];
+    
+    XCSourceTextPosition start = [[selections firstObject] start];
+    XCSourceTextPosition end = [[selections lastObject] end];
+    
+    NSRange range = NSMakeRange(start.line, end.line - start.line + 1);
+    [lines removeObjectsInRange:range];
+    [lines insertObject:classTemplate atIndex:start.line];
+    
     
     completionHandler(nil);
 }
