@@ -53,7 +53,7 @@ static NSString *EJSCommandID = @"EJSTemplate";
     NSError *error;
     NSString *docTemplate;
     
-    if ([command isEqualToString:HTMLCommandID] && [self content:[invocation buffer] isHTML:&error]) {
+    if ([command isEqualToString:HTMLCommandID]) {
         docTemplate = htmlTemplate;
     } else if ([command isEqualToString:PugCommandID]) {
         docTemplate = pugTemplate;
