@@ -15,10 +15,8 @@
 #include "cssprettyprint.h"
 
 char next(int i, const char *line, size_t linelen) {
-    if (i + 1 < linelen) {
-        char c = line[i + 1];
-        return c;
-    }
+    if (i + 1 < linelen)
+        return line[i + 1];
     
     return '\0';
 }
@@ -26,20 +24,25 @@ char next(int i, const char *line, size_t linelen) {
 void skipSpace(int *i, char *line, size_t linelen) {
     char c = next(*i, line, linelen);
     
-    while (c == ' '){
+    while (c == ' ') {
         *i += 1;
         c = next(*i, line, linelen);
     }
 }
 
 void addNewLine(int i, const char *line, size_t linelen, char *out) {
-    char n = next(i, line, linelen);
-    if (n != '\n')
+    if (next(i, line, linelen) != '\n')
         strncat(out, "\n", 1);
 }
 
+void indent(char *out, int level, int useTabs) {
+    int i;
+    for (i = 0; i < level * 4; i++)
+        strncat(out, " ", 1);
+}
+
 int prettyprint(char *css, char *out) {
-    int indent = 0;
+    int indentLvl = 0;
     char *line = NULL;
     size_t linelen;
 
@@ -53,15 +56,16 @@ int prettyprint(char *css, char *out) {
     while ((line = strsep(&css, "\n")) != NULL) {
         linelen = strlen(line);
         
-        int i, j;
-        for (j = 0; j < linelen; j++) {
-            c = line[j];
+        int i;
+        for (i = 0; i < linelen; i++) {
+            c = line[i];
             
             if (needsnl && c != '\n') {
                 strncat(out, "\n", 1);
                 needsnl = 0;
             }
             
+            // FIXME: - handle at-rules
             if (c == '@') {
                 inQuery = 1;
                 inSelector = 0;
@@ -70,11 +74,18 @@ int prettyprint(char *css, char *out) {
             
             strncat(out, &c, 1);
             
-            if (c != ' ' && next(j, line, linelen) == '{') {
+            if (next(i, line, linelen) == '{' && c != ' ')
                 strncat(out, " ", 1);
+            else if (next(i, line, linelen) == '}' && c != '\n') {
+                if (inRule)
+                    indent(out, indentLvl, 0);
+                
+                strncat(out, "\n", 1);
             }
             
             if (c == '{') {
+                indentLvl++;
+                
                 if (inQuery) {
                     inQuery = 0;
                     inSelector = 1;
@@ -83,42 +94,35 @@ int prettyprint(char *css, char *out) {
                     inRule = 1;
                 }
                 
-                indent += 4;
+                skipSpace(&i, line, linelen);
+                addNewLine(i, line, linelen, out);
                 
-                skipSpace(&j, line, linelen);
-                addNewLine(j, line, linelen, out);
-                
-                if (next(j, line, linelen) != '}') {
-                    for (i = 0; i < indent; i++)
-                        strncat(out, " ", 1);
-                }
+                if (next(i, line, linelen) != '}')
+                    indent(out, indentLvl, 0);
             } else if (c == '}') {
+                indentLvl--;
+                
                 if (inRule) {
                     inRule = 0;
                     inSelector = 1;
-                } else if (inQuery) {
+                } else if (inQuery)
                     inQuery = 0;
-                }
                 
-                indent -= 4;
+                skipSpace(&i, line, linelen);
+                addNewLine(i, line, linelen, out);
                 
-                skipSpace(&j, line, linelen);
-                addNewLine(j, line, linelen, out);
                 needsnl = 1;
             } else if (c == ';') {
-                skipSpace(&j, line, linelen);
-                addNewLine(j, line, linelen, out);
+                skipSpace(&i, line, linelen);
+                addNewLine(i, line, linelen, out);
                 
-                if (next(j, line, linelen) != '}') {
-                    for (i = 0; i < indent; i++)
-                        strncat(out, " ", 1);
-                }
-            } else if (c == ',') {
+                if (next(i, line, linelen) != '}')
+                    indent(out, indentLvl, 0);
+            } else if (c == ',' || c == '>') {
                 strncat(out, " ", 1);
-            } else if (c == ':') {
+            } else if (c == ':')
                 if (inRule)
                     strncat(out, " ", 1);
-            }
         }
     }
 
