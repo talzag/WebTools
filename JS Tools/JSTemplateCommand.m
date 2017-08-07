@@ -27,7 +27,8 @@ static NSString *FunctionClassCommandID = @"NewClassFunction";
     "   constructor() {\n"
     "       \n"
     "   }\n"
-    "}\n";
+    "}\n"
+    "\n";
     
     NSString *funcTemplate =
    @"var <#ClassName#> = function () {\n"
@@ -36,7 +37,8 @@ static NSString *FunctionClassCommandID = @"NewClassFunction";
     "\n"
     "<#ClassName#>.prototype.<#method#> = function () {\n"
     "   \n"
-    "}\n";
+    "}\n"
+    "\n";
     
     NSString *command = [[[invocation commandIdentifier] componentsSeparatedByString:@"."] lastObject];
     
@@ -55,15 +57,7 @@ static NSString *FunctionClassCommandID = @"NewClassFunction";
         return;
     }
     
-    NSMutableArray <NSString *> *lines = [[invocation buffer] lines];
-    NSMutableArray <XCSourceTextRange *> *selections = [[invocation buffer] selections];
-    
-    XCSourceTextPosition start = [[selections firstObject] start];
-    XCSourceTextPosition end = [[selections lastObject] end];
-    
-    NSRange range = NSMakeRange(start.line, end.line - start.line + 1);
-    [lines removeObjectsInRange:range];
-    [lines insertObject:classTemplate atIndex:start.line];
+    [self insertTemplate:classTemplate intoBuffer:[invocation buffer]];
     
     completionHandler(nil);
 }

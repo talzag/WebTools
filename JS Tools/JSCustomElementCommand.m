@@ -32,20 +32,7 @@
     "customElements.define('<#element-name#>', <#ElementName#>);\n"
     "\n";
     
-    // TODO: Check selections. Overwrite selected lines, or insert at cursor
-    NSMutableArray <NSString *> *lines = [[invocation buffer] lines];
-    NSMutableArray <XCSourceTextRange *> *selections = [[invocation buffer] selections];
-    
-    XCSourceTextPosition start = [[selections firstObject] start];
-    XCSourceTextPosition end = [[selections lastObject] end];
-    
-    NSRange range = NSMakeRange(start.line, end.line - start.line + 1);
-    
-    if (range.length > 1) {
-        [lines removeObjectsInRange:range];
-    }
-    
-    [lines insertObject:customElementTemplate atIndex:start.line];
+    [self insertTemplate:customElementTemplate intoBuffer:[invocation buffer]];
     
     completionHandler(nil);
 }
