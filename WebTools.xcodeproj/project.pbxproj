@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E33279951F1A7DFB00CE167A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E348F13E1F1A6FF00057D6DA /* Cocoa.framework */; };
 		E33279991F1A7DFB00CE167A /* HTMLSourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279981F1A7DFB00CE167A /* HTMLSourceEditorExtension.m */; };
 		E332799C1F1A7DFB00CE167A /* HTMLTemplateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E332799B1F1A7DFB00CE167A /* HTMLTemplateCommand.m */; };
 		E33279A11F1A7DFB00CE167A /* HTML Tools.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E33279941F1A7DFB00CE167A /* HTML Tools.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E33279A71F1A89C000CE167A /* CSSPrefixCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279A61F1A89C000CE167A /* CSSPrefixCommand.m */; };
 		E33279AA1F1A8A8C00CE167A /* CSSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279A91F1A8A8C00CE167A /* CSSCommand.m */; };
-		E33279B01F1A8E4300CE167A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E348F13E1F1A6FF00057D6DA /* Cocoa.framework */; };
 		E33279B41F1A8E4300CE167A /* JSSourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279B31F1A8E4300CE167A /* JSSourceEditorExtension.m */; };
 		E33279B71F1A8E4300CE167A /* JSTemplateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279B61F1A8E4300CE167A /* JSTemplateCommand.m */; };
 		E33279BC1F1A8E4300CE167A /* JS Tools.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E33279AF1F1A8E4300CE167A /* JS Tools.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -24,7 +22,6 @@
 		E348F12B1F1A6FDF0057D6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E348F12A1F1A6FDF0057D6DA /* Assets.xcassets */; };
 		E348F12E1F1A6FDF0057D6DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E348F12C1F1A6FDF0057D6DA /* Main.storyboard */; };
 		E348F1311F1A6FDF0057D6DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1301F1A6FDF0057D6DA /* main.m */; };
-		E348F13F1F1A6FF00057D6DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E348F13E1F1A6FF00057D6DA /* Cocoa.framework */; };
 		E348F14B1F1A6FF00057D6DA /* CSS Tools.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E348F13C1F1A6FF00057D6DA /* CSS Tools.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E348F1541F1A70C50057D6DA /* CSSSourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1521F1A703D0057D6DA /* CSSSourceEditorExtension.m */; };
 		E348F1551F1A70C50057D6DA /* CSSVariableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1501F1A703D0057D6DA /* CSSVariableCommand.m */; };
@@ -132,7 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E33279951F1A7DFB00CE167A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E33279B01F1A8E4300CE167A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +150,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E348F13F1F1A6FF00057D6DA /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
