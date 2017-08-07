@@ -34,7 +34,7 @@
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).NewClassFunction</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Create new class template</string>
+					<string>Insert new class template</string>
 				</dict>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
@@ -42,7 +42,7 @@
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).NewClassES6</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Create new class template (ES6)</string>
+					<string>Insert new class template (ES6)</string>
 				</dict>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
@@ -50,7 +50,7 @@
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).NewElementES6</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Create new element template (ES6)</string>
+					<string>Insert new Custom Element template (ES6)</string>
 				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>

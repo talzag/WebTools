@@ -65,7 +65,6 @@ static NSString *FunctionClassCommandID = @"NewClassFunction";
     [lines removeObjectsInRange:range];
     [lines insertObject:classTemplate atIndex:start.line];
     
-    
     completionHandler(nil);
 }
 

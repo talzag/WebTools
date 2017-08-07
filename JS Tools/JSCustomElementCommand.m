@@ -20,7 +20,8 @@
     }
     
     NSString *customElementTemplate =
-   @"class <#ElementName > extends HTMLElement {\n"
+   @"// Custom Element API - https://html.spec.whatwg.org/#custom-elements \n"
+    "class <#ElementName#> extends HTMLElement {\n"
     "   constructor() {\n"
     "       super();\n"
     "       const shadowRoot = this.attachShadow({mode: 'closed'});\n"
@@ -28,14 +29,23 @@
     "   }\n"
     "}\n"
     "\n"
-    "customElements.define('<#element-name >', <#ElementName >);\n"
+    "customElements.define('<#element-name#>', <#ElementName#>);\n"
     "\n";
     
     // TODO: Check selections. Overwrite selected lines, or insert at cursor
-    XCSourceTextRange *cursor = [[[invocation buffer] selections] firstObject];
-    XCSourceTextPosition insertionPoint = [cursor start];
+    NSMutableArray <NSString *> *lines = [[invocation buffer] lines];
+    NSMutableArray <XCSourceTextRange *> *selections = [[invocation buffer] selections];
     
-    [[[invocation buffer] lines] insertObject:customElementTemplate atIndex:insertionPoint.line];
+    XCSourceTextPosition start = [[selections firstObject] start];
+    XCSourceTextPosition end = [[selections lastObject] end];
+    
+    NSRange range = NSMakeRange(start.line, end.line - start.line + 1);
+    
+    if (range.length > 1) {
+        [lines removeObjectsInRange:range];
+    }
+    
+    [lines insertObject:customElementTemplate atIndex:start.line];
     
     completionHandler(nil);
 }
