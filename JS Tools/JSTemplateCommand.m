@@ -27,7 +27,8 @@ static NSString *FunctionClassCommandID = @"NewClassFunction";
     "   constructor() {\n"
     "       \n"
     "   }\n"
-    "}\n";
+    "}\n"
+    "\n";
     
     NSString *funcTemplate =
    @"var <#ClassName#> = function () {\n"
@@ -36,7 +37,8 @@ static NSString *FunctionClassCommandID = @"NewClassFunction";
     "\n"
     "<#ClassName#>.prototype.<#method#> = function () {\n"
     "   \n"
-    "}\n";
+    "}\n"
+    "\n";
     
     NSString *command = [[[invocation commandIdentifier] componentsSeparatedByString:@"."] lastObject];
     
@@ -55,7 +57,7 @@ static NSString *FunctionClassCommandID = @"NewClassFunction";
         return;
     }
     
-    [[[invocation buffer] lines] insertObject:classTemplate atIndex:0];
+    [self insertTemplate:classTemplate intoBuffer:[invocation buffer]];
     
     completionHandler(nil);
 }

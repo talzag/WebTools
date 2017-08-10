@@ -28,6 +28,8 @@ typedef NS_ENUM(NSUInteger, JSErrorCode) {
  */
 - (BOOL)content:(XCSourceTextBuffer *)buffer isJS:(NSError **)error;
 
+- (void)insertTemplate:(nonnull NSString *)template intoBuffer:(nonnull XCSourceTextBuffer *)buffer;
+
 @end
 
 NS_ASSUME_NONNULL_END

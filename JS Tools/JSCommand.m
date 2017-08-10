@@ -25,4 +25,20 @@ static NSString *JSErrorDomain = @"com.dstrokis.WebTools.JS-Tools.Error";
     return isJS;
 }
 
+- (void)insertTemplate:(nonnull NSString *)template intoBuffer:(nonnull XCSourceTextBuffer *)buffer {
+    NSMutableArray <NSString *> *lines = [buffer lines];
+    NSMutableArray <XCSourceTextRange *> *selections = [buffer selections];
+    
+    XCSourceTextPosition start = [[selections firstObject] start];
+    XCSourceTextPosition end = [[selections lastObject] end];
+    
+    NSRange range = NSMakeRange(start.line, end.line - start.line + 1);
+    
+    if (range.length > 1) {
+        [lines removeObjectsInRange:range];
+    }
+    
+    [lines insertObject:template atIndex:start.line];
+}
+
 @end
