@@ -14,6 +14,13 @@
 
 #include "cssprettyprint.h"
 
+char prev(int i, const char *line, size_t linelen) {
+    if (i - 1 >= 0)
+        return line[i - 1];
+    
+    return '\0';
+}
+
 char next(int i, const char *line, size_t linelen) {
     if (i + 1 < linelen)
         return line[i + 1];
@@ -35,12 +42,14 @@ void addNewLine(int i, const char *line, size_t linelen, char *out) {
         strncat(out, "\n", 1);
 }
 
-void indent(char *out, int level, int useTabs) {
+void indent(char *out, unsigned level, int useTabs) {
     int i;
     for (i = 0; i < level * 4; i++)
         strncat(out, " ", 1);
 }
 
+// FIXME: consume comments
+// FIXME: @media rules not indenting
 int prettyprint(char *css, char *out) {
     int indentLvl = 0;
     char *line = NULL;
@@ -53,6 +62,7 @@ int prettyprint(char *css, char *out) {
 
     char c;
     
+    // @media screen{body{background-color:#fff;}}li,a:active,p{color:red;}
     while ((line = strsep(&css, "\n")) != NULL) {
         linelen = strlen(line);
         
@@ -67,31 +77,28 @@ int prettyprint(char *css, char *out) {
             
             // FIXME: - handle at-rules
             if (c == '@') {
-                inQuery = 1;
-                inSelector = 0;
-                inRule = 0;
+                char n = next(i, line, linelen);
+                // @media || @supports
+                if (n == 'm' || n == 's') {
+                    inQuery = 1;
+                    inSelector = 0;
+                    inRule = 0;
+                } else {
+                    inQuery = 0;
+                }
             }
             
             strncat(out, &c, 1);
             
-            if (next(i, line, linelen) == '{' && c != ' ')
-                strncat(out, " ", 1);
-            else if (next(i, line, linelen) == '}' && c != '\n') {
-                if (inRule)
-                    indent(out, indentLvl, 0);
-                
-                strncat(out, "\n", 1);
-            }
-            
             if (c == '{') {
                 indentLvl++;
                 
-                if (inQuery) {
-                    inQuery = 0;
-                    inSelector = 1;
-                } else if (inSelector) {
+                if (inSelector) {
                     inSelector = 0;
                     inRule = 1;
+                } else {
+                    inSelector = 1;
+                    inRule = 0;
                 }
                 
                 skipSpace(&i, line, linelen);
@@ -105,12 +112,21 @@ int prettyprint(char *css, char *out) {
                 if (inRule) {
                     inRule = 0;
                     inSelector = 1;
-                } else if (inQuery)
-                    inQuery = 0;
+                }
+                
+                if (inQuery) {
+                    skipSpace(&i, line, linelen);
+                    
+                    // are we exiting the  @-query?
+                    if (prev(i, line, linelen) == '}') {
+                        inQuery = 0;
+                        inSelector = 1;
+                        inRule = 0;
+                        addNewLine(i, line, linelen, out);
+                    }
+                }
                 
                 skipSpace(&i, line, linelen);
-                addNewLine(i, line, linelen, out);
-                
                 needsnl = 1;
             } else if (c == ';') {
                 skipSpace(&i, line, linelen);
@@ -118,11 +134,23 @@ int prettyprint(char *css, char *out) {
                 
                 if (next(i, line, linelen) != '}')
                     indent(out, indentLvl, 0);
+                else if (inQuery) {
+                    indent(out, indentLvl - 1, 0);
+                    needsnl = 0;
+                }
             } else if (c == ',' || c == '>') {
                 strncat(out, " ", 1);
             } else if (c == ':')
                 if (inRule)
                     strncat(out, " ", 1);
+
+            if (next(i, line, linelen) == '{' && c != ' ')
+                strncat(out, " ", 1);
+            else if (next(i, line, linelen) == '}' && c != ';' && inRule) { // some CSS files don't end all rules with a semicolon
+                addNewLine(i, line, linelen, out);
+                if (inQuery)
+                    indent(out, indentLvl - 1, 0);
+            }
         }
     }
 
