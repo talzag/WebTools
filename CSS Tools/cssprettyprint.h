@@ -9,11 +9,8 @@
 #ifndef cssprettyprint_h
 #define cssprettyprint_h
 
-#include <stddef.h>
+#include <stdio.h>
 
-void skipSpace(int *i, char *line, size_t linelen);
-char next(int i, const char *line, size_t linelen);
-void addNewLine(int i, const char *line, size_t linelen, char *out);
-int prettyprint(char *css, char *out);
+void prettyprint(char *, char *, size_t);
 
 #endif /* cssprettyprint_h */

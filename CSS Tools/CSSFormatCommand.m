@@ -23,13 +23,14 @@
     NSString *bufferCopy = [[invocation buffer] completeBuffer];
     
     // FIXME: parse @charset rule
+    
     const char *cBuffer = [bufferCopy UTF8String];
-    size_t cBuffLen = strnlen(cBuffer, MAXBSIZE);
-    size_t newBuffSize = MAX(MAXBSIZE, cBuffLen * 2);
-    char *newBuffer = malloc(newBuffSize * sizeof(char));
+    NSUInteger cBuffLen = [bufferCopy lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    NSUInteger newBuffSize = MIN(MAXBSIZE, cBuffLen * 2);
+    char *newBuffer = (char *)malloc(newBuffSize * sizeof(char));
     memset(newBuffer, 0, newBuffSize);
     
-    prettyprint((char *)cBuffer, newBuffer);
+    prettyprint((char *)cBuffer, newBuffer, cBuffLen);
     
     NSString *replacementBuffer = [NSString stringWithUTF8String:newBuffer];
     [[invocation buffer] setCompleteBuffer:replacementBuffer];
