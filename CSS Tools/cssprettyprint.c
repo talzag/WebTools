@@ -60,6 +60,7 @@ void consumeComment(int *i, char *out, char*line, size_t linelen) {
     strncat(out, "\n", 1);
     (*i)++;
 }
+
 void prettyprint(char *src, char *out, size_t srcLen) {
     int indentLvl = 0;
     
