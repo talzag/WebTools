@@ -39,25 +39,26 @@ void indent(char *out, unsigned level, int useTabs) {
 }
 
 void consumeComment(int *i, char *out, char*line, size_t linelen) {
-    char c = next(*i, line, linelen);
-    strncat(out, &c, 1);
+    char n = next(*i, line, linelen);
+    strncat(out, &n, 1);
     
     while (1) {
         (*i)++;
-        c = next(*i, line, linelen);
-        strncat(out, &c, 1);
+        n = next(*i, line, linelen);
+        strncat(out, &n, 1);
         
-        if (c == '*') {
+        if (n == '*') {
             (*i)++;
-            c = next(*i, line, linelen);
-            strncat(out, &c, 1);
+            n = next(*i, line, linelen);
+            strncat(out, &n, 1);
             
-            if (c == '/')
+            if (n == '/') {
+                (*i)++;
                 break;
+            }
         }
     }
     
-    strncat(out, "\n", 1);
     (*i)++;
 }
 
@@ -106,7 +107,9 @@ void prettyprint(char *src, char *out, size_t srcLen) {
             skipSpace(&i, src, srcLen);
             addNewLine(i, src, srcLen, out);
             
-            if (next(i, src, srcLen)  != '}' && i < srcLen - 1) {
+            if (next(i, src, srcLen) == '}') {
+                indent(out, indentLvl - 1, 0);
+            } else {
                 addNewLine(i, src, srcLen, out);
                 indent(out, indentLvl, 0);
             }
@@ -125,14 +128,18 @@ void prettyprint(char *src, char *out, size_t srcLen) {
         }
         
         if (c == '/') {
-            if (n == '*')
+            if (n == '*') {
                 consumeComment(&i, out, src, srcLen);
-            indent(out, indentLvl, 0);
+                addNewLine(i, src, srcLen, out);
+                indent(out, indentLvl, 0);
+                skipSpace(&i, src, srcLen);
+            }
             continue;
         }
         
         // some CSS files don't end all rules with a semicolon
-        if (next(i, src, srcLen) == '}' && c != ';') {
+        if ((next(i, src, srcLen) == '}' || next(i, src, srcLen) == '\n') && c != ';') {
+            i++;
             addNewLine(i, src, srcLen, out);
             indent(out, indentLvl - 1, 0);
         }
