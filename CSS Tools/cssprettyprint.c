@@ -70,13 +70,22 @@ void prettyprint(char *src, char *out, size_t srcLen) {
         c = src[i];
         n = next(i, src, srcLen);
         
+        if (isspace(c)) {
+            if (i != 0)
+                strncat(out, &c, 1);
+            
+            skipSpace(&i, src, srcLen);
+            continue;
+        }
+        
         strncat(out, &c, 1);
         
-        if ((n == '{' || n == '>' || n == '+') && c != ' ')
+        if (n == '{' || n == '>' || n == '+')
             strncat(out, " ", 1);
         
-        if ((c == ',' || c == '>' || c == '+') && n != ' ') {
+        if (c == ',' || c == '>' || c == '+') {
             strncat(out, " ", 1);
+            skipSpace(&i, src, srcLen);
             continue;
         }
         
@@ -86,7 +95,7 @@ void prettyprint(char *src, char *out, size_t srcLen) {
             skipSpace(&i, src, srcLen);
             addNewLine(i, src, srcLen, out);
             
-            if (n != '}')
+            if (next(i, src, srcLen)  != '}')
                 indent(out, indentLvl, 0);
             continue;
         }
@@ -97,7 +106,7 @@ void prettyprint(char *src, char *out, size_t srcLen) {
             skipSpace(&i, src, srcLen);
             addNewLine(i, src, srcLen, out);
             
-            if (n != '}' && i < srcLen - 1) {
+            if (next(i, src, srcLen)  != '}' && i < srcLen - 1) {
                 addNewLine(i, src, srcLen, out);
                 indent(out, indentLvl, 0);
             }
@@ -108,7 +117,7 @@ void prettyprint(char *src, char *out, size_t srcLen) {
             skipSpace(&i, src, srcLen);
             addNewLine(i, src, srcLen, out);
             
-            if (n == '}')
+            if (next(i, src, srcLen) == '}')
                 indent(out, indentLvl - 1, 0);
             else
                 indent(out, indentLvl, 0);
@@ -123,7 +132,7 @@ void prettyprint(char *src, char *out, size_t srcLen) {
         }
         
         // some CSS files don't end all rules with a semicolon
-        if (n == '}' && c != ';') {
+        if (next(i, src, srcLen) == '}' && c != ';') {
             addNewLine(i, src, srcLen, out);
             indent(out, indentLvl - 1, 0);
         }
