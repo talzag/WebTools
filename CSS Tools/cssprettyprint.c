@@ -138,10 +138,12 @@ void prettyprint(char *src, char *out, size_t srcLen) {
         }
         
         // some CSS files don't end all rules with a semicolon
-        if ((next(i, src, srcLen) == '}' || next(i, src, srcLen) == '\n') && c != ';') {
-            i++;
+        n = next(i, src, srcLen);
+        if ((n == '}' || n == '\n') && c != ';') {
+            int level = n == '}' ? indentLvl - 1 : indentLvl;
             addNewLine(i, src, srcLen, out);
-            indent(out, indentLvl - 1, 0);
+            indent(out, level, 0);
+            i++;
         }
     }
 }
