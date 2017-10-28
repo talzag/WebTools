@@ -35,10 +35,10 @@ static char *outBuffer;
 - (void)testNext {
     char result;
     
-    NSString *source = @"body { color: red; }";
+    NSString *src = @"body { color: red; }";
     
-    const char *cSrc = [source UTF8String];
-    size_t len = [source lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    const char *cSrc = [src UTF8String];
+    size_t len = [src lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
     
     result = next(0, (char *)cSrc, len);
     XCTAssertEqual('o', result);
@@ -48,7 +48,13 @@ static char *outBuffer;
 }
 
 - (void)testSkipSpace {
+    NSString *src = @"    body { color: red; }"; // 4 leading spaces
+    const char *cSrc = [src UTF8String];
+    size_t len = [src lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
     
+    int i = 0;
+    skipSpace(&i, (char *)cSrc, len);
+    XCTAssertEqual(i, 3);
 }
 
 - (void)testAddNewLine {
