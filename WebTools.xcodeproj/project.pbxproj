@@ -30,6 +30,8 @@
 		E37824AD1FA4D8C2007E41DD /* cssprettyprint.h in Headers */ = {isa = PBXBuildFile; fileRef = E30D27081F2EC08A00AD9CA9 /* cssprettyprint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E37824AE1FA4D8C7007E41DD /* cssprettyprint.c in Sources */ = {isa = PBXBuildFile; fileRef = E30D27071F2EC08A00AD9CA9 /* cssprettyprint.c */; };
 		E37824AF1FA4D8E2007E41DD /* libCSS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E37824A91FA4D8BE007E41DD /* libCSS.a */; };
+		E37824B71FA4DBBD007E41DD /* CSSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E37824B61FA4DBBD007E41DD /* CSSTests.m */; };
+		E37824B91FA4DBBD007E41DD /* libCSS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E37824A91FA4D8BE007E41DD /* libCSS.a */; };
 		E39111961F21A7410042B320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E39111941F21A7410042B320 /* Localizable.strings */; };
 		E39F16EB1F1BFDB600FDC12F /* HTMLCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */; };
 		E3A8633B1F1BCB2B003B3645 /* CSSQueryCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */; };
@@ -57,6 +59,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = E348F13B1F1A6FF00057D6DA;
 			remoteInfo = "CSS Tools";
+		};
+		E37824BA1FA4DBBD007E41DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E348F1191F1A6FDF0057D6DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E37824A81FA4D8BE007E41DD;
+			remoteInfo = CSS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -124,6 +133,9 @@
 		E34B048E1F1F9E2C00CE1660 /* Instruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instruction.h; sourceTree = "<group>"; };
 		E34B048F1F1F9E2C00CE1660 /* Instruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instruction.m; sourceTree = "<group>"; };
 		E37824A91FA4D8BE007E41DD /* libCSS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCSS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E37824B41FA4DBBD007E41DD /* CSSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E37824B61FA4DBBD007E41DD /* CSSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSTests.m; sourceTree = "<group>"; };
+		E37824B81FA4DBBD007E41DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E39111951F21A7410042B320 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		E39F16E91F1BFDB600FDC12F /* HTMLCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLCommand.h; sourceTree = "<group>"; };
 		E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLCommand.m; sourceTree = "<group>"; };
@@ -170,6 +182,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E37824B11FA4DBBD007E41DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E37824B91FA4DBBD007E41DD /* libCSS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -209,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				E37824A01FA4D7DE007E41DD /* CSS */,
+				E37824B51FA4DBBD007E41DD /* CSSTests */,
 				E348F1231F1A6FDF0057D6DA /* WebTools */,
 				E348F1401F1A6FF00057D6DA /* CSS Tools */,
 				E33279961F1A7DFB00CE167A /* HTML Tools */,
@@ -226,6 +247,7 @@
 				E33279941F1A7DFB00CE167A /* HTML Tools.appex */,
 				E33279AF1F1A8E4300CE167A /* JS Tools.appex */,
 				E37824A91FA4D8BE007E41DD /* libCSS.a */,
+				E37824B41FA4DBBD007E41DD /* CSSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -287,6 +309,15 @@
 				E30D27071F2EC08A00AD9CA9 /* cssprettyprint.c */,
 			);
 			path = CSS;
+			sourceTree = "<group>";
+		};
+		E37824B51FA4DBBD007E41DD /* CSSTests */ = {
+			isa = PBXGroup;
+			children = (
+				E37824B61FA4DBBD007E41DD /* CSSTests.m */,
+				E37824B81FA4DBBD007E41DD /* Info.plist */,
+			);
+			path = CSSTests;
 			sourceTree = "<group>";
 		};
 		E39111931F21A7410042B320 /* en.lproj */ = {
@@ -400,6 +431,24 @@
 			productReference = E37824A91FA4D8BE007E41DD /* libCSS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		E37824B31FA4DBBD007E41DD /* CSSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E37824BC1FA4DBBD007E41DD /* Build configuration list for PBXNativeTarget "CSSTests" */;
+			buildPhases = (
+				E37824B01FA4DBBD007E41DD /* Sources */,
+				E37824B11FA4DBBD007E41DD /* Frameworks */,
+				E37824B21FA4DBBD007E41DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E37824BB1FA4DBBD007E41DD /* PBXTargetDependency */,
+			);
+			name = CSSTests;
+			productName = CSSTests;
+			productReference = E37824B41FA4DBBD007E41DD /* CSSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -438,6 +487,10 @@
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
 					};
+					E37824B31FA4DBBD007E41DD = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = E348F11C1F1A6FDF0057D6DA /* Build configuration list for PBXProject "WebTools" */;
@@ -458,6 +511,7 @@
 				E33279931F1A7DFB00CE167A /* HTML Tools */,
 				E33279AE1F1A8E4300CE167A /* JS Tools */,
 				E37824A81FA4D8BE007E41DD /* CSS */,
+				E37824B31FA4DBBD007E41DD /* CSSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -488,6 +542,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E348F13A1F1A6FF00057D6DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E37824B21FA4DBBD007E41DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -551,6 +612,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E37824B01FA4DBBD007E41DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E37824B71FA4DBBD007E41DD /* CSSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -568,6 +637,11 @@
 			isa = PBXTargetDependency;
 			target = E348F13B1F1A6FF00057D6DA /* CSS Tools */;
 			targetProxy = E348F1491F1A6FF00057D6DA /* PBXContainerItemProxy */;
+		};
+		E37824BB1FA4DBBD007E41DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E37824A81FA4D8BE007E41DD /* CSS */;
+			targetProxy = E37824BA1FA4DBBD007E41DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -839,6 +913,34 @@
 			};
 			name = Release;
 		};
+		E37824BD1FA4DBBD007E41DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SWP5WTP5JJ;
+				INFOPLIST_FILE = CSSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dstrokis.CSSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E37824BE1FA4DBBD007E41DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SWP5WTP5JJ;
+				INFOPLIST_FILE = CSSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dstrokis.CSSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -892,6 +994,15 @@
 			buildConfigurations = (
 				E37824AB1FA4D8BE007E41DD /* Debug */,
 				E37824AC1FA4D8BE007E41DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E37824BC1FA4DBBD007E41DD /* Build configuration list for PBXNativeTarget "CSSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E37824BD1FA4DBBD007E41DD /* Debug */,
+				E37824BE1FA4DBBD007E41DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

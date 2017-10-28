@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>CSSTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>HTML Tools.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
