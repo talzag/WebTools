@@ -28,8 +28,7 @@ void skipSpace(int *i, char *line, size_t linelen) {
 }
 
 void addNewLine(int i, char *line, size_t linelen, char *out) {
-    if (next(i, line, linelen) != '\n')
-        strncat(out, "\n", 1);
+    strncat(out, "\n", 1);
 }
 
 void indent(char *out, unsigned level, int useTabs) {
@@ -72,7 +71,7 @@ void prettyprint(char *src, char *out, size_t srcLen) {
         n = next(i, src, srcLen);
         
         if (isspace(c)) {
-            if (i != 0)
+            if (i != 0 && !isspace(n))
                 strncat(out, &c, 1);
             
             skipSpace(&i, src, srcLen);
@@ -143,7 +142,7 @@ void prettyprint(char *src, char *out, size_t srcLen) {
             int level = n == '}' ? indentLvl - 1 : indentLvl;
             addNewLine(i, src, srcLen, out);
             indent(out, level, 0);
-            i++;
+            if (n == '\n') i++;
         }
     }
 }
