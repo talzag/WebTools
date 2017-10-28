@@ -19,8 +19,12 @@ char next(int i, char *line, size_t linelen) {
 }
 
 void skipSpace(int *i, char *line, size_t linelen) {
-    while (isspace(next(++(*i), line, linelen)))
-        ;
+    char c = next(*i, line, linelen);
+    
+    while (isspace(c)){
+        *i += 1;
+        c = next(*i, line, linelen);
+    }
 }
 
 void addNewLine(int i, char *line, size_t linelen, char *out) {
