@@ -22,8 +22,6 @@
     
     NSString *bufferCopy = [[invocation buffer] completeBuffer];
     
-    // FIXME: parse @charset rule
-    
     const char *cBuffer = [bufferCopy UTF8String];
     NSUInteger cBuffLen = [bufferCopy lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
     NSUInteger newBuffSize = MIN(MAXBSIZE, cBuffLen * 2);
