@@ -7,6 +7,10 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "cssprettyprint.h"
+#import "cssprettyprint-private.h"
+
+static char *outBuffer;
 
 @interface CSSTests : XCTestCase
 
@@ -16,24 +20,47 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    size_t bufsiz = 256 * sizeof(char);
+    outBuffer = (char *)malloc(bufsiz);
+    memset(outBuffer, 0, bufsiz);
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    free(outBuffer);
+    
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testNext {
+    char result;
+    
+    NSString *source = @"body { color: red; }";
+    
+    const char *cSrc = [source UTF8String];
+    size_t len = [source lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    
+    result = next(0, (char *)cSrc, len);
+    XCTAssertEqual('o', result);
+    
+    result = next((int)len, (char *)cSrc, len);
+    XCTAssertEqual('\0', result);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testSkipSpace {
+    
+}
+
+- (void)testAddNewLine {
+    
+}
+
+- (void)testIndent {
+    
+}
+
+- (void)testConsumeComment {
+    
 }
 
 @end

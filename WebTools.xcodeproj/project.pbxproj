@@ -32,6 +32,7 @@
 		E37824AF1FA4D8E2007E41DD /* libCSS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E37824A91FA4D8BE007E41DD /* libCSS.a */; };
 		E37824B71FA4DBBD007E41DD /* CSSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E37824B61FA4DBBD007E41DD /* CSSTests.m */; };
 		E37824B91FA4DBBD007E41DD /* libCSS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E37824A91FA4D8BE007E41DD /* libCSS.a */; };
+		E37824C01FA4DCB0007E41DD /* cssprettyprint-private.h in Headers */ = {isa = PBXBuildFile; fileRef = E37824BF1FA4DCAE007E41DD /* cssprettyprint-private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E39111961F21A7410042B320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E39111941F21A7410042B320 /* Localizable.strings */; };
 		E39F16EB1F1BFDB600FDC12F /* HTMLCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */; };
 		E3A8633B1F1BCB2B003B3645 /* CSSQueryCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */; };
@@ -136,6 +137,7 @@
 		E37824B41FA4DBBD007E41DD /* CSSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E37824B61FA4DBBD007E41DD /* CSSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSTests.m; sourceTree = "<group>"; };
 		E37824B81FA4DBBD007E41DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E37824BF1FA4DCAE007E41DD /* cssprettyprint-private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cssprettyprint-private.h"; sourceTree = "<group>"; };
 		E39111951F21A7410042B320 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		E39F16E91F1BFDB600FDC12F /* HTMLCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLCommand.h; sourceTree = "<group>"; };
 		E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLCommand.m; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				E30D27081F2EC08A00AD9CA9 /* cssprettyprint.h */,
+				E37824BF1FA4DCAE007E41DD /* cssprettyprint-private.h */,
 				E30D27071F2EC08A00AD9CA9 /* cssprettyprint.c */,
 			);
 			path = CSS;
@@ -335,6 +338,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E37824C01FA4DCB0007E41DD /* cssprettyprint-private.h in Headers */,
 				E37824AD1FA4D8C2007E41DD /* cssprettyprint.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
