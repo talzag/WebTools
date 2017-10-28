@@ -11,6 +11,7 @@
 #import "cssprettyprint-private.h"
 
 static char *outBuffer;
+static size_t bufsiz = 256 * sizeof(char);
 
 @interface CSSTests : XCTestCase
 
@@ -21,7 +22,6 @@ static char *outBuffer;
 - (void)setUp {
     [super setUp];
     
-    size_t bufsiz = 256 * sizeof(char);
     outBuffer = (char *)malloc(bufsiz);
     memset(outBuffer, 0, bufsiz);
 }
@@ -70,13 +70,35 @@ static char *outBuffer;
 }
 
 - (void)testIndent {
-    XCTAssertEqual(0, strncmp("", outBuffer, 256 * sizeof(char)));
+    XCTAssertEqual(0, strncmp("", outBuffer, bufsiz));
     indent((char *)outBuffer, 1, 0);
-    XCTAssertEqual(0, strncmp("    ", outBuffer, 256 * sizeof(char)));
+    XCTAssertEqual(0, strncmp("    ", outBuffer, bufsiz));
 }
 
 - (void)testConsumeComment {
+    NSString *src = @"/* comment A */ ";
     
+    const char *cSrc = [src UTF8String];
+    size_t len = [src lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    
+    int i = 0;
+    consumeComment(&i, outBuffer, (char *)cSrc, len);
+    
+    XCTAssertEqual(i, len - 1);
+    XCTAssertEqual(' ', cSrc[i]);
+}
+
+- (void)testPrettyPrintComment {
+    NSString *src = @"/* comment A *//* comment B */";
+    const char *cSrc = [src UTF8String];
+    size_t len = [src lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    
+    prettyprint((char *)cSrc, outBuffer, len);
+    
+    NSString *expected = @"/* comment A */\n/* comment B */\n";
+    int result = strncmp(outBuffer, [expected UTF8String], bufsiz);
+    
+    XCTAssertEqual(result, 0);
 }
 
 @end

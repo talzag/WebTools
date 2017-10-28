@@ -127,7 +127,7 @@ void prettyprint(char *src, char *out, size_t srcLen) {
                 consumeComment(&i, out, src, srcLen);
                 addNewLine(i, src, srcLen, out);
                 indent(out, indentLvl, 0);
-                skipSpace(&i, src, srcLen);
+                i--; // the loop will increment i again, skipping a char
             }
             continue;
         }
