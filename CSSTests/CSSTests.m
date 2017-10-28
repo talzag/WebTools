@@ -52,7 +52,15 @@ static char *outBuffer;
 }
 
 - (void)testAddNewLine {
+    char first;
     
+    first = outBuffer[0];
+    XCTAssertEqual('\0', first);
+    
+    addNewLine(0, "", 0, outBuffer);
+    
+    first = outBuffer[0];
+    XCTAssertEqual('\n', first);
 }
 
 - (void)testIndent {
