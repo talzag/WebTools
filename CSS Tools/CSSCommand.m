@@ -16,7 +16,7 @@ static NSString *kUTTypeCSS = @"public.css";
 - (BOOL)content:(XCSourceTextBuffer *)buffer isCSS:(NSError * _Nullable __autoreleasing *)error {
     BOOL isCSS = [[buffer contentUTI] isEqualToString:kUTTypeCSS];
     
-    if (!isCSS) {
+    if (!isCSS && error) {
         NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"The file isn't a CSS file." };
         *error = [NSError errorWithDomain:CSSErrorDomain
                                      code:CSSErrorNotCSS

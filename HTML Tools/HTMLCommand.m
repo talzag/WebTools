@@ -15,7 +15,7 @@ static NSString *HTMLErrorDomain = @"com.dstrokis.WebTools.HTML-Tools.Error";
 - (BOOL)content:(XCSourceTextBuffer *)buffer isHTML:(NSError * _Nullable __autoreleasing *)error {
     BOOL isHTML = [[buffer contentUTI] isEqualToString:(__bridge NSString *)kUTTypeHTML];
     
-    if (!isHTML) {
+    if (!isHTML && error) {
         NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"The UTI of the buffer was not \"public.html\"." };
         *error = [NSError errorWithDomain:HTMLErrorDomain
                                      code:HTMLErrorNotHTML

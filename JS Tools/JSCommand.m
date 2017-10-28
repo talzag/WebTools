@@ -15,7 +15,7 @@ static NSString *JSErrorDomain = @"com.dstrokis.WebTools.JS-Tools.Error";
 - (BOOL)content:(XCSourceTextBuffer *)buffer isJS:(NSError * _Nullable __autoreleasing *)error {
     BOOL isJS = [[buffer contentUTI] isEqualToString:@"com.netscape.javascript-source"];
     
-    if (!isJS) {
+    if (!isJS && error) {
         NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"The UTI of the buffer was not \"public.js\"." };
         *error = [NSError errorWithDomain:JSErrorDomain
                                      code:JSErrorNotJS
