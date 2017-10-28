@@ -70,7 +70,9 @@ static char *outBuffer;
 }
 
 - (void)testIndent {
-    
+    XCTAssertEqual(0, strncmp("", outBuffer, 256 * sizeof(char)));
+    indent((char *)outBuffer, 1, 0);
+    XCTAssertEqual(0, strncmp("    ", outBuffer, 256 * sizeof(char)));
 }
 
 - (void)testConsumeComment {
