@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E30D27061F2BE58700AD9CA9 /* CSSFormatCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E30D27051F2BE58700AD9CA9 /* CSSFormatCommand.m */; };
+		E316E0761FC8E08800245E73 /* TextEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316E0751FC8E08800245E73 /* TextEditorViewController.swift */; };
 		E33279991F1A7DFB00CE167A /* HTMLSourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279981F1A7DFB00CE167A /* HTMLSourceEditorExtension.m */; };
 		E332799C1F1A7DFB00CE167A /* HTMLTemplateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E332799B1F1A7DFB00CE167A /* HTMLTemplateCommand.m */; };
 		E33279A11F1A7DFB00CE167A /* HTML Tools.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E33279941F1A7DFB00CE167A /* HTML Tools.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -109,6 +110,8 @@
 		E30D27051F2BE58700AD9CA9 /* CSSFormatCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSFormatCommand.m; sourceTree = "<group>"; };
 		E30D27071F2EC08A00AD9CA9 /* cssprettyprint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cssprettyprint.c; sourceTree = "<group>"; };
 		E30D27081F2EC08A00AD9CA9 /* cssprettyprint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cssprettyprint.h; sourceTree = "<group>"; };
+		E316E0721FC8E05000245E73 /* WebTools-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebTools-Bridging-Header.h"; sourceTree = "<group>"; };
+		E316E0751FC8E08800245E73 /* TextEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorViewController.swift; sourceTree = "<group>"; };
 		E33279941F1A7DFB00CE167A /* HTML Tools.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HTML Tools.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E33279971F1A7DFB00CE167A /* HTMLSourceEditorExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLSourceEditorExtension.h; sourceTree = "<group>"; };
 		E33279981F1A7DFB00CE167A /* HTMLSourceEditorExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLSourceEditorExtension.m; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 				E348F1281F1A6FDF0057D6DA /* InstructionsPageController.m */,
 				E33C84351F1D4CA600CB6283 /* InstructionViewController.h */,
 				E33C84361F1D4CA600CB6283 /* InstructionViewController.m */,
+				E316E0751FC8E08800245E73 /* TextEditorViewController.swift */,
+				E316E0721FC8E05000245E73 /* WebTools-Bridging-Header.h */,
 				E348F12A1F1A6FDF0057D6DA /* Assets.xcassets */,
 				E348F12C1F1A6FDF0057D6DA /* Main.storyboard */,
 				E39111931F21A7410042B320 /* en.lproj */,
@@ -482,6 +487,7 @@
 					};
 					E348F1201F1A6FDF0057D6DA = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0910;
 					};
 					E348F13B1F1A6FF00057D6DA = {
 						CreatedOnToolsVersion = 9.0;
@@ -596,6 +602,7 @@
 			files = (
 				E348F1291F1A6FDF0057D6DA /* InstructionsPageController.m in Sources */,
 				E348F1311F1A6FDF0057D6DA /* main.m in Sources */,
+				E316E0761FC8E08800245E73 /* TextEditorViewController.swift in Sources */,
 				E348F1261F1A6FDF0057D6DA /* AppDelegate.m in Sources */,
 				E33C84371F1D4CA600CB6283 /* InstructionViewController.m in Sources */,
 				E34B04901F1F9E2C00CE1660 /* Instruction.m in Sources */,
@@ -852,6 +859,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WebTools/WebTools.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SWP5WTP5JJ;
@@ -859,6 +867,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dstrokis.WebTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WebTools/WebTools-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -866,6 +877,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WebTools/WebTools.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SWP5WTP5JJ;
@@ -873,6 +885,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dstrokis.WebTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WebTools/WebTools-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
