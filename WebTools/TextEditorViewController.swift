@@ -8,14 +8,13 @@
 
 import Cocoa
 
-class TextEditorViewController: NSViewController {
-
+final class TextEditorViewController: NSViewController, NSTextViewDelegate {
+    
     @IBOutlet var textView: NSTextView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }
+    dynamic let defaultFont = NSFont(name: "Menlo", size: 11.0)
     
+    dynamic var sourceCodeText: String?
     
+    dynamic var attrSourceCodeText: String?
 }

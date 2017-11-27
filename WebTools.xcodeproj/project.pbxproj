@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E30D27061F2BE58700AD9CA9 /* CSSFormatCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E30D27051F2BE58700AD9CA9 /* CSSFormatCommand.m */; };
 		E316E0761FC8E08800245E73 /* TextEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316E0751FC8E08800245E73 /* TextEditorViewController.swift */; };
+		E316E07F1FC8E1D100245E73 /* WebToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316E07E1FC8E1D100245E73 /* WebToolsTests.swift */; };
 		E33279991F1A7DFB00CE167A /* HTMLSourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279981F1A7DFB00CE167A /* HTMLSourceEditorExtension.m */; };
 		E332799C1F1A7DFB00CE167A /* HTMLTemplateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E332799B1F1A7DFB00CE167A /* HTMLTemplateCommand.m */; };
 		E33279A11F1A7DFB00CE167A /* HTML Tools.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E33279941F1A7DFB00CE167A /* HTML Tools.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -34,6 +35,8 @@
 		E39111961F21A7410042B320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E39111941F21A7410042B320 /* Localizable.strings */; };
 		E39F16EB1F1BFDB600FDC12F /* HTMLCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */; };
 		E3A8633B1F1BCB2B003B3645 /* CSSQueryCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */; };
+		E3BCF0F41FCB3A34001A26F5 /* WebCodeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCF0F31FCB3A34001A26F5 /* WebCodeDocument.swift */; };
+		E3BCF0F61FCBBB09001A26F5 /* TextEditorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCF0F51FCBBB09001A26F5 /* TextEditorWindowController.swift */; };
 		E3D99DE21FA58A14007F4B1D /* libCSS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E37824A91FA4D8BE007E41DD /* libCSS.a */; };
 		E3D99DE41FA58BD5007F4B1D /* cssprettyprint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E30D27081F2EC08A00AD9CA9 /* cssprettyprint.h */; };
 		E3D99DE51FA58BEA007F4B1D /* cssprettyprint-private.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E37824BF1FA4DCAE007E41DD /* cssprettyprint-private.h */; };
@@ -41,6 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E316E0811FC8E1D200245E73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E348F1191F1A6FDF0057D6DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E348F1201F1A6FDF0057D6DA;
+			remoteInfo = WebTools;
+		};
 		E332799F1F1A7DFB00CE167A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E348F1191F1A6FDF0057D6DA /* Project object */;
@@ -112,6 +122,9 @@
 		E30D27081F2EC08A00AD9CA9 /* cssprettyprint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cssprettyprint.h; sourceTree = "<group>"; };
 		E316E0721FC8E05000245E73 /* WebTools-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebTools-Bridging-Header.h"; sourceTree = "<group>"; };
 		E316E0751FC8E08800245E73 /* TextEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorViewController.swift; sourceTree = "<group>"; };
+		E316E07C1FC8E1D100245E73 /* WebToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E316E07E1FC8E1D100245E73 /* WebToolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebToolsTests.swift; sourceTree = "<group>"; };
+		E316E0801FC8E1D200245E73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E33279941F1A7DFB00CE167A /* HTML Tools.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HTML Tools.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E33279971F1A7DFB00CE167A /* HTMLSourceEditorExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLSourceEditorExtension.h; sourceTree = "<group>"; };
 		E33279981F1A7DFB00CE167A /* HTMLSourceEditorExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLSourceEditorExtension.m; sourceTree = "<group>"; };
@@ -164,11 +177,20 @@
 		E39F16EA1F1BFDB600FDC12F /* HTMLCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLCommand.m; sourceTree = "<group>"; };
 		E3A863391F1BCB2B003B3645 /* CSSQueryCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSQueryCommand.h; sourceTree = "<group>"; };
 		E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSQueryCommand.m; sourceTree = "<group>"; };
+		E3BCF0F31FCB3A34001A26F5 /* WebCodeDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCodeDocument.swift; sourceTree = "<group>"; };
+		E3BCF0F51FCBBB09001A26F5 /* TextEditorWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorWindowController.swift; sourceTree = "<group>"; };
 		E3F39E581F1CF5FF0027EEC7 /* JSCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCommand.h; sourceTree = "<group>"; };
 		E3F39E591F1CF5FF0027EEC7 /* JSCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCommand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E316E0791FC8E1D100245E73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E33279911F1A7DFB00CE167A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +238,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E316E07D1FC8E1D100245E73 /* WebToolsTests */ = {
+			isa = PBXGroup;
+			children = (
+				E316E07E1FC8E1D100245E73 /* WebToolsTests.swift */,
+				E316E0801FC8E1D200245E73 /* Info.plist */,
+			);
+			path = WebToolsTests;
+			sourceTree = "<group>";
+		};
 		E33279961F1A7DFB00CE167A /* HTML Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +288,7 @@
 				E37824B51FA4DBBD007E41DD /* CSSTests */,
 				E33279961F1A7DFB00CE167A /* HTML Tools */,
 				E33279B11F1A8E4300CE167A /* JS Tools */,
+				E316E07D1FC8E1D100245E73 /* WebToolsTests */,
 				E348F13D1F1A6FF00057D6DA /* Frameworks */,
 				E348F1221F1A6FDF0057D6DA /* Products */,
 			);
@@ -271,6 +303,7 @@
 				E33279AF1F1A8E4300CE167A /* JS Tools.appex */,
 				E37824A91FA4D8BE007E41DD /* libCSS.a */,
 				E37824B41FA4DBBD007E41DD /* CSSTests.xctest */,
+				E316E07C1FC8E1D100245E73 /* WebToolsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,6 +319,8 @@
 				E348F1281F1A6FDF0057D6DA /* InstructionsPageController.m */,
 				E33C84351F1D4CA600CB6283 /* InstructionViewController.h */,
 				E33C84361F1D4CA600CB6283 /* InstructionViewController.m */,
+				E3BCF0F31FCB3A34001A26F5 /* WebCodeDocument.swift */,
+				E3BCF0F51FCBBB09001A26F5 /* TextEditorWindowController.swift */,
 				E316E0751FC8E08800245E73 /* TextEditorViewController.swift */,
 				E316E0721FC8E05000245E73 /* WebTools-Bridging-Header.h */,
 				E348F12A1F1A6FDF0057D6DA /* Assets.xcassets */,
@@ -357,6 +392,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E316E07B1FC8E1D100245E73 /* WebToolsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E316E0831FC8E1D200245E73 /* Build configuration list for PBXNativeTarget "WebToolsTests" */;
+			buildPhases = (
+				E316E0781FC8E1D100245E73 /* Sources */,
+				E316E0791FC8E1D100245E73 /* Frameworks */,
+				E316E07A1FC8E1D100245E73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E316E0821FC8E1D200245E73 /* PBXTargetDependency */,
+			);
+			name = WebToolsTests;
+			productName = WebToolsTests;
+			productReference = E316E07C1FC8E1D100245E73 /* WebToolsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E33279931F1A7DFB00CE167A /* HTML Tools */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E33279A41F1A7DFB00CE167A /* Build configuration list for PBXNativeTarget "HTML Tools" */;
@@ -471,9 +524,15 @@
 		E348F1191F1A6FDF0057D6DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = dstrokis;
 				TargetAttributes = {
+					E316E07B1FC8E1D100245E73 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E348F1201F1A6FDF0057D6DA;
+					};
 					E33279931F1A7DFB00CE167A = {
 						CreatedOnToolsVersion = 9.0;
 						SystemCapabilities = {
@@ -529,11 +588,19 @@
 				E33279AE1F1A8E4300CE167A /* JS Tools */,
 				E37824A81FA4D8BE007E41DD /* CSS */,
 				E37824B31FA4DBBD007E41DD /* CSSTests */,
+				E316E07B1FC8E1D100245E73 /* WebToolsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E316E07A1FC8E1D100245E73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E33279921F1A7DFB00CE167A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -575,6 +642,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E316E0781FC8E1D100245E73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E316E07F1FC8E1D100245E73 /* WebToolsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E33279901F1A7DFB00CE167A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -601,10 +676,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E348F1291F1A6FDF0057D6DA /* InstructionsPageController.m in Sources */,
+				E3BCF0F41FCB3A34001A26F5 /* WebCodeDocument.swift in Sources */,
 				E348F1311F1A6FDF0057D6DA /* main.m in Sources */,
 				E316E0761FC8E08800245E73 /* TextEditorViewController.swift in Sources */,
 				E348F1261F1A6FDF0057D6DA /* AppDelegate.m in Sources */,
 				E33C84371F1D4CA600CB6283 /* InstructionViewController.m in Sources */,
+				E3BCF0F61FCBBB09001A26F5 /* TextEditorWindowController.swift in Sources */,
 				E34B04901F1F9E2C00CE1660 /* Instruction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,6 +718,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E316E0821FC8E1D200245E73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E348F1201F1A6FDF0057D6DA /* WebTools */;
+			targetProxy = E316E0811FC8E1D200245E73 /* PBXContainerItemProxy */;
+		};
 		E33279A01F1A7DFB00CE167A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E33279931F1A7DFB00CE167A /* HTML Tools */;
@@ -688,6 +770,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E316E0841FC8E1D200245E73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SWP5WTP5JJ;
+				INFOPLIST_FILE = WebToolsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dstrokis.WebToolsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebTools.app/Contents/MacOS/WebTools";
+			};
+			name = Debug;
+		};
+		E316E0851FC8E1D200245E73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SWP5WTP5JJ;
+				INFOPLIST_FILE = WebToolsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dstrokis.WebToolsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebTools.app/Contents/MacOS/WebTools";
+			};
+			name = Release;
+		};
 		E33279A21F1A7DFB00CE167A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -852,6 +971,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -976,6 +1096,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E316E0831FC8E1D200245E73 /* Build configuration list for PBXNativeTarget "WebToolsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E316E0841FC8E1D200245E73 /* Debug */,
+				E316E0851FC8E1D200245E73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E33279A41F1A7DFB00CE167A /* Build configuration list for PBXNativeTarget "HTML Tools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

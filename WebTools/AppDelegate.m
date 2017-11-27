@@ -11,7 +11,7 @@
 @implementation AppDelegate
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
-    return YES;
+    return NO;
 }
 
 @end
