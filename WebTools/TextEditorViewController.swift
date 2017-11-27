@@ -15,6 +15,4 @@ final class TextEditorViewController: NSViewController, NSTextViewDelegate {
     dynamic let defaultFont = NSFont(name: "Menlo", size: 11.0)
     
     dynamic var sourceCodeText: String?
-    
-    dynamic var attrSourceCodeText: String?
 }
