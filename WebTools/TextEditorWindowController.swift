@@ -10,21 +10,21 @@ import Cocoa
 
 class TextEditorWindowController: NSWindowController {
     
-    var textViewController: TextEditorViewController? {
+    var textEditorViewController: TextEditorViewController? {
         return contentViewController as? TextEditorViewController
     }
     
     var sourceCodeText: String? {
         get {
-            return textViewController?.sourceCodeText
+            return textEditorViewController?.sourceCodeText
         }
         
         set {
-            textViewController?.sourceCodeText = newValue
+            textEditorViewController?.sourceCodeText = newValue
         }
     }
-    
+        
     func breakUndoCoalescing() {
-        textViewController?.textView.breakUndoCoalescing()
+        textEditorViewController?.textView.breakUndoCoalescing()
     }
 }

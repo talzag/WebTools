@@ -62,7 +62,7 @@
                                     <items>
                                         <menuItem title="New" keyEquivalent="n" id="hHt-mi-xjh">
                                             <connections>
-                                                <action selector="newDocument:" target="Ady-hI-5gd" id="nD7-Rs-vgo"/>
+                                                <action selector="newDocument:" target="Ady-hI-5gd" id="Vn8-25-WwW"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="VWS-tK-e7J">
@@ -354,10 +354,63 @@
             <point key="canvasLocation" x="-39" y="-160"/>
         </scene>
         <!--Window Controller-->
+        <scene sceneID="xOJ-jY-pIl">
+            <objects>
+                <customObject id="rJx-Rj-3Kz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <windowController storyboardIdentifier="WindowController" id="XAT-cN-VZI" sceneMemberID="viewController">
+                    <window key="window" title="WebTools" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="zwn-bO-bxH">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                        <connections>
+                            <outlet property="delegate" destination="XAT-cN-VZI" id="LcN-Eo-KkM"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="eQ8-Ga-VvB" kind="relationship" relationship="window.shadowedContentViewController" id="Kdc-hh-FiZ"/>
+                    </connections>
+                </windowController>
+            </objects>
+            <point key="canvasLocation" x="-729" y="88"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LX5-xQ-reG">
+            <objects>
+                <customObject id="HfD-Bd-06C" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="eQ8-Ga-VvB" sceneMemberID="viewController">
+                    <view key="view" id="P3J-yj-ApD">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sIn-GJ-ErW">
+                                <rect key="frame" x="194" y="117" width="92" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69" id="9lR-wU-zRl"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="New File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EOb-LV-tpD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="newDocument:" target="HfD-Bd-06C" id="ced-te-FIf"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="sIn-GJ-ErW" firstAttribute="centerY" secondItem="P3J-yj-ApD" secondAttribute="centerY" id="Dxh-0r-ddO"/>
+                            <constraint firstItem="sIn-GJ-ErW" firstAttribute="centerX" secondItem="P3J-yj-ApD" secondAttribute="centerX" id="luQ-SS-77z"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-729" y="579"/>
+        </scene>
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController storyboardIdentifier="WindowController" id="B8D-0N-5wS" customClass="TextEditorWindowController" customModule="WebTools" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" identifier="WindowController" title="WebTools" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingIdentifier="WebTools" tabbingMode="preferred" id="IQv-IB-iLA">
+                <windowController storyboardIdentifier="TextEditorWindowController" id="B8D-0N-5wS" customClass="TextEditorWindowController" customModule="WebTools" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" identifier="WindowController" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="preferred" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="617" height="405"/>
@@ -372,7 +425,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="162"/>
+            <point key="canvasLocation" x="110" y="156"/>
         </scene>
         <!--Text Editor View Controller-->
         <scene sceneID="o6r-XO-pEO">

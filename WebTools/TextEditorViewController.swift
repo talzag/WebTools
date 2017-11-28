@@ -12,7 +12,18 @@ final class TextEditorViewController: NSViewController, NSTextViewDelegate {
     
     @IBOutlet var textView: NSTextView!
     
-    dynamic let defaultFont = NSFont(name: "Menlo", size: 11.0)
+    // MARK: - Bindings
     
+    dynamic let defaultFont = NSFont(name: "Menlo", size: 11.0)
     dynamic var sourceCodeText: String?
+    
+    // MARK: - NSTextViewDelegate
+    
+    func textDidChange(_ notification: Notification) {
+        
+    }
+    
+    func textView(_ view: NSTextView, menu: NSMenu, for event: NSEvent, at charIndex: Int) -> NSMenu? {
+        return menu
+    }
 }
