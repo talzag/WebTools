@@ -18,6 +18,7 @@
 		E33279B41F1A8E4300CE167A /* JSSourceEditorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279B31F1A8E4300CE167A /* JSSourceEditorExtension.m */; };
 		E33279B71F1A8E4300CE167A /* JSTemplateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E33279B61F1A8E4300CE167A /* JSTemplateCommand.m */; };
 		E33279BC1F1A8E4300CE167A /* JS Tools.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E33279AF1F1A8E4300CE167A /* JS Tools.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E335FA0E1FD2032500934B11 /* LineNumbersRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E335FA0D1FD2032500934B11 /* LineNumbersRulerView.swift */; };
 		E33C84371F1D4CA600CB6283 /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33C84361F1D4CA600CB6283 /* InstructionViewController.m */; };
 		E347703F1F278C930047CE77 /* JSCustomElementCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E347703E1F278C930047CE77 /* JSCustomElementCommand.m */; };
 		E348F1261F1A6FDF0057D6DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E348F1251F1A6FDF0057D6DA /* AppDelegate.m */; };
@@ -143,6 +144,7 @@
 		E33279B61F1A8E4300CE167A /* JSTemplateCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTemplateCommand.m; sourceTree = "<group>"; };
 		E33279B81F1A8E4300CE167A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E33279B91F1A8E4300CE167A /* JS_Tools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JS_Tools.entitlements; sourceTree = "<group>"; };
+		E335FA0D1FD2032500934B11 /* LineNumbersRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumbersRulerView.swift; sourceTree = "<group>"; };
 		E33C84351F1D4CA600CB6283 /* InstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionViewController.h; sourceTree = "<group>"; };
 		E33C84361F1D4CA600CB6283 /* InstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionViewController.m; sourceTree = "<group>"; };
 		E347703D1F278C930047CE77 /* JSCustomElementCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCustomElementCommand.h; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				E3BCF0F31FCB3A34001A26F5 /* WebCodeDocument.swift */,
 				E3BCF0F51FCBBB09001A26F5 /* TextEditorWindowController.swift */,
 				E316E0751FC8E08800245E73 /* TextEditorViewController.swift */,
+				E335FA0D1FD2032500934B11 /* LineNumbersRulerView.swift */,
 				E348F12A1F1A6FDF0057D6DA /* Assets.xcassets */,
 				E348F12C1F1A6FDF0057D6DA /* Main.storyboard */,
 				E39111931F21A7410042B320 /* en.lproj */,
@@ -676,6 +679,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E348F1291F1A6FDF0057D6DA /* InstructionsPageController.m in Sources */,
+				E335FA0E1FD2032500934B11 /* LineNumbersRulerView.swift in Sources */,
 				E3BCF0F41FCB3A34001A26F5 /* WebCodeDocument.swift in Sources */,
 				E348F1311F1A6FDF0057D6DA /* main.m in Sources */,
 				E316E0761FC8E08800245E73 /* TextEditorViewController.swift in Sources */,
@@ -989,7 +993,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WebTools/WebTools-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1006,7 +1010,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dstrokis.WebTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WebTools/WebTools-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

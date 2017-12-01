@@ -14,9 +14,9 @@ class TextEditorWindowController: NSWindowController {
         return contentViewController as? TextEditorViewController
     }
     
-    var sourceCodeText: String? {
+    var sourceCodeText: String {
         get {
-            return textEditorViewController?.sourceCodeText
+            return textEditorViewController?.sourceCodeText ?? ""
         }
         
         set {

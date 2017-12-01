@@ -10,7 +10,7 @@ import Cocoa
 
 final class WebCodeDocument: NSDocument {
     
-    var sourceCodeText: String?
+    var sourceCodeText: String = ""
     
     var editorWindowController: TextEditorWindowController?
     
@@ -19,8 +19,8 @@ final class WebCodeDocument: NSDocument {
     }
     
     override func makeWindowControllers() {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(string: "Main") as String, bundle: nil)
-        let sceneIdentifier = NSStoryboard.SceneIdentifier(string: "TextEditorWindowController") as String
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let sceneIdentifier = NSStoryboard.SceneIdentifier(rawValue: "TextEditorWindowController")
         guard let windowController = storyboard.instantiateController(withIdentifier: sceneIdentifier) as? TextEditorWindowController else {
             return
         }
@@ -33,8 +33,8 @@ final class WebCodeDocument: NSDocument {
 
     override func data(ofType typeName: String) throws -> Data {
         editorWindowController?.breakUndoCoalescing()
-        sourceCodeText = editorWindowController?.sourceCodeText
-        return sourceCodeText?.data(using: .utf8) ?? Data()
+        sourceCodeText = editorWindowController?.sourceCodeText ?? ""
+        return sourceCodeText.data(using: .utf8) ?? Data()
     }
     
     override func read(from data: Data, ofType typeName: String) throws {
@@ -45,7 +45,7 @@ final class WebCodeDocument: NSDocument {
         sourceCodeText = text
     }
 
-    override class func autosavesInPlace() -> Bool {
+    override class var autosavesInPlace: Bool {
         return true
     }
 }
