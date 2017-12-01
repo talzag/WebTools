@@ -38,6 +38,7 @@
 		E3A8633B1F1BCB2B003B3645 /* CSSQueryCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */; };
 		E3BCF0F41FCB3A34001A26F5 /* WebCodeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCF0F31FCB3A34001A26F5 /* WebCodeDocument.swift */; };
 		E3BCF0F61FCBBB09001A26F5 /* TextEditorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCF0F51FCBBB09001A26F5 /* TextEditorWindowController.swift */; };
+		E3C9E19A1FD221D100A23A6F /* WebToolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C9E1991FD221D100A23A6F /* WebToolsUITests.swift */; };
 		E3D99DE21FA58A14007F4B1D /* libCSS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E37824A91FA4D8BE007E41DD /* libCSS.a */; };
 		E3D99DE41FA58BD5007F4B1D /* cssprettyprint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E30D27081F2EC08A00AD9CA9 /* cssprettyprint.h */; };
 		E3D99DE51FA58BEA007F4B1D /* cssprettyprint-private.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E37824BF1FA4DCAE007E41DD /* cssprettyprint-private.h */; };
@@ -79,6 +80,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = E37824A81FA4D8BE007E41DD;
 			remoteInfo = CSS;
+		};
+		E3C9E19C1FD221D100A23A6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E348F1191F1A6FDF0057D6DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E348F1201F1A6FDF0057D6DA;
+			remoteInfo = WebTools;
 		};
 		E3D99DE01FA588BA007F4B1D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -181,6 +189,9 @@
 		E3A8633A1F1BCB2B003B3645 /* CSSQueryCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSQueryCommand.m; sourceTree = "<group>"; };
 		E3BCF0F31FCB3A34001A26F5 /* WebCodeDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCodeDocument.swift; sourceTree = "<group>"; };
 		E3BCF0F51FCBBB09001A26F5 /* TextEditorWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorWindowController.swift; sourceTree = "<group>"; };
+		E3C9E1971FD221D100A23A6F /* WebToolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebToolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3C9E1991FD221D100A23A6F /* WebToolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebToolsUITests.swift; sourceTree = "<group>"; };
+		E3C9E19B1FD221D100A23A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3F39E581F1CF5FF0027EEC7 /* JSCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCommand.h; sourceTree = "<group>"; };
 		E3F39E591F1CF5FF0027EEC7 /* JSCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCommand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +248,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3C9E1941FD221D100A23A6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -285,12 +303,13 @@
 			isa = PBXGroup;
 			children = (
 				E348F1231F1A6FDF0057D6DA /* WebTools */,
+				E316E07D1FC8E1D100245E73 /* WebToolsTests */,
+				E3C9E1981FD221D100A23A6F /* WebToolsUITests */,
 				E348F1401F1A6FF00057D6DA /* CSS Tools */,
 				E37824A01FA4D7DE007E41DD /* CSS */,
 				E37824B51FA4DBBD007E41DD /* CSSTests */,
 				E33279961F1A7DFB00CE167A /* HTML Tools */,
 				E33279B11F1A8E4300CE167A /* JS Tools */,
-				E316E07D1FC8E1D100245E73 /* WebToolsTests */,
 				E348F13D1F1A6FF00057D6DA /* Frameworks */,
 				E348F1221F1A6FDF0057D6DA /* Products */,
 			);
@@ -306,6 +325,7 @@
 				E37824A91FA4D8BE007E41DD /* libCSS.a */,
 				E37824B41FA4DBBD007E41DD /* CSSTests.xctest */,
 				E316E07C1FC8E1D100245E73 /* WebToolsTests.xctest */,
+				E3C9E1971FD221D100A23A6F /* WebToolsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -390,6 +410,15 @@
 				E39111941F21A7410042B320 /* Localizable.strings */,
 			);
 			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		E3C9E1981FD221D100A23A6F /* WebToolsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E3C9E1991FD221D100A23A6F /* WebToolsUITests.swift */,
+				E3C9E19B1FD221D100A23A6F /* Info.plist */,
+			);
+			path = WebToolsUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,6 +550,24 @@
 			productReference = E37824B41FA4DBBD007E41DD /* CSSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E3C9E1961FD221D100A23A6F /* WebToolsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3C9E19E1FD221D100A23A6F /* Build configuration list for PBXNativeTarget "WebToolsUITests" */;
+			buildPhases = (
+				E3C9E1931FD221D100A23A6F /* Sources */,
+				E3C9E1941FD221D100A23A6F /* Frameworks */,
+				E3C9E1951FD221D100A23A6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3C9E19D1FD221D100A23A6F /* PBXTargetDependency */,
+			);
+			name = WebToolsUITests;
+			productName = WebToolsUITests;
+			productReference = E3C9E1971FD221D100A23A6F /* WebToolsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -570,6 +617,11 @@
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
 					};
+					E3C9E1961FD221D100A23A6F = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E348F1201F1A6FDF0057D6DA;
+					};
 				};
 			};
 			buildConfigurationList = E348F11C1F1A6FDF0057D6DA /* Build configuration list for PBXProject "WebTools" */;
@@ -592,6 +644,7 @@
 				E37824A81FA4D8BE007E41DD /* CSS */,
 				E37824B31FA4DBBD007E41DD /* CSSTests */,
 				E316E07B1FC8E1D100245E73 /* WebToolsTests */,
+				E3C9E1961FD221D100A23A6F /* WebToolsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -636,6 +689,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E37824B21FA4DBBD007E41DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3C9E1951FD221D100A23A6F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -719,6 +779,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3C9E1931FD221D100A23A6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3C9E19A1FD221D100A23A6F /* WebToolsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -746,6 +814,11 @@
 			isa = PBXTargetDependency;
 			target = E37824A81FA4D8BE007E41DD /* CSS */;
 			targetProxy = E37824BA1FA4DBBD007E41DD /* PBXContainerItemProxy */;
+		};
+		E3C9E19D1FD221D100A23A6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E348F1201F1A6FDF0057D6DA /* WebTools */;
+			targetProxy = E3C9E19C1FD221D100A23A6F /* PBXContainerItemProxy */;
 		};
 		E3D99DE11FA588BA007F4B1D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1097,6 +1170,40 @@
 			};
 			name = Release;
 		};
+		E3C9E19F1FD221D100A23A6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SWP5WTP5JJ;
+				INFOPLIST_FILE = WebToolsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dstrokis.WebToolsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = WebTools;
+			};
+			name = Debug;
+		};
+		E3C9E1A01FD221D100A23A6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SWP5WTP5JJ;
+				INFOPLIST_FILE = WebToolsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dstrokis.WebToolsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = WebTools;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1168,6 +1275,15 @@
 			buildConfigurations = (
 				E37824BD1FA4DBBD007E41DD /* Debug */,
 				E37824BE1FA4DBBD007E41DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3C9E19E1FD221D100A23A6F /* Build configuration list for PBXNativeTarget "WebToolsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3C9E19F1FD221D100A23A6F /* Debug */,
+				E3C9E1A01FD221D100A23A6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
