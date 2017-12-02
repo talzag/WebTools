@@ -8,12 +8,15 @@
 
 import Cocoa
 
+/// Provides an interface between an `NSDocument` and the various objects managed by this controller that facilitate editing source code.
 class TextEditorWindowController: NSWindowController {
     
+    /// A type-aware convenience wrapper around `self.contentViewController`.
     var textEditorViewController: TextEditorViewController? {
         return contentViewController as? TextEditorViewController
     }
     
+    /// The content of this controller's `document`.
     var sourceCodeText: String {
         get {
             return textEditorViewController?.sourceCodeText ?? ""
@@ -24,6 +27,7 @@ class TextEditorWindowController: NSWindowController {
         }
     }
         
+    /// Calls through to `NSTextView.breakUndoCoalescing()`. Used when `self.document` is saving.
     func breakUndoCoalescing() {
         textEditorViewController?.textView.breakUndoCoalescing()
     }

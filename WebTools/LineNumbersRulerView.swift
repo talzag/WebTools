@@ -8,7 +8,8 @@
 
 import Cocoa
 
-class LineNumbersRulerView: NSRulerView {
+/// A ruler view that draws line numbers next to the lines of text in an `NSTextView`.
+final class LineNumbersRulerView: NSRulerView {
     
     override func draw(_ dirtyRect: NSRect) {
         guard let context = NSGraphicsContext.current else {
@@ -26,6 +27,13 @@ class LineNumbersRulerView: NSRulerView {
         drawHashMarksAndLabels(in: bounds)
     }
     
+    /// Draws a line number as an attributed string, with the given attributes, next to the line containing the glyph at `glyphIndex` in an `NSTextView`s text content.
+    ///
+    /// - Parameters:
+    ///   - number: The line number to draw
+    ///   - glyphIndex: The location, in an `NSTextView`'s `string`, of a glyph in the line of text for which `number` will be drawn.
+    ///   - attributes: `NSAttributedString` attributes
+    /// - Returns: The end of the range of characters for the line of text containing the glyph at `glyphIndex`.
     func drawLineNumber(_ number: Int, forGlyphAtIndex glyphIndex: Int, with attributes: [NSAttributedStringKey: Any]) -> Int {
         guard let textView = clientView as? NSTextView,
               let layoutManager = textView.layoutManager,
@@ -66,15 +74,18 @@ class LineNumbersRulerView: NSRulerView {
                 .font: NSFont(descriptor: textView.font!.fontDescriptor, size: textView.font!.pointSize - 1.0)!,
                 .foregroundColor: NSColor.gray
             ])
+            
             lineCount += 1
         }
         
         if layoutManager.extraLineFragmentRect != .zero {
             let extraRect = layoutManager.extraLineFragmentRect
+            
             let lineNum = NSAttributedString(string: "\(lineCount)", attributes: [
                 .font: NSFont(descriptor: textView.font!.fontDescriptor, size: textView.font!.pointSize - 1.0)!,
                 .foregroundColor: NSColor.lightGray
             ])
+            
             let lineNumSize = lineNum.size()
             let lineNumRect = NSRect(x: (ruleThickness - lineNumSize.width) / 2.0,
                                      y: extraRect.origin.y - 1.0,
