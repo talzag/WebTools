@@ -270,10 +270,10 @@
 			isa = PBXGroup;
 			children = (
 				E316E07E1FC8E1D100245E73 /* WebToolsTests.swift */,
-				E3BDC3D31FD4DF40001B04D3 /* TextEditorViewControllerTests.swift */,
-				E3BDC3D51FD4DF60001B04D3 /* TextEditorWindowControllerTests.swift */,
-				E3BDC3D71FD4DF78001B04D3 /* LineNumbersRulerViewTests.swift */,
 				E3BDC3D11FD4DD58001B04D3 /* WebCodeDocumentTests.swift */,
+				E3BDC3D51FD4DF60001B04D3 /* TextEditorWindowControllerTests.swift */,
+				E3BDC3D31FD4DF40001B04D3 /* TextEditorViewControllerTests.swift */,
+				E3BDC3D71FD4DF78001B04D3 /* LineNumbersRulerViewTests.swift */,
 				E316E0801FC8E1D200245E73 /* Info.plist */,
 			);
 			path = WebToolsTests;

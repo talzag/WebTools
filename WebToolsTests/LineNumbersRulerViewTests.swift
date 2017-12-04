@@ -7,8 +7,11 @@
 //
 
 import XCTest
+@testable import WebTools
 
 class LineNumbersRulerViewTests: XCTestCase {
+    
+    var rulerView: LineNumbersRulerView?
 
     override func setUp() {
         super.setUp()

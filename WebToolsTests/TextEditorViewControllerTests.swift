@@ -11,6 +11,8 @@ import XCTest
 
 class TextEditorViewControllerTests: XCTestCase {
 
+    var viewController: TextEditorViewController?
+    
     override func setUp() {
         super.setUp()
         
