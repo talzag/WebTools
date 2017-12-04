@@ -39,6 +39,9 @@
 		E3BCF0F41FCB3A34001A26F5 /* WebCodeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCF0F31FCB3A34001A26F5 /* WebCodeDocument.swift */; };
 		E3BCF0F61FCBBB09001A26F5 /* TextEditorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCF0F51FCBBB09001A26F5 /* TextEditorWindowController.swift */; };
 		E3BDC3D21FD4DD58001B04D3 /* WebCodeDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BDC3D11FD4DD58001B04D3 /* WebCodeDocumentTests.swift */; };
+		E3BDC3D41FD4DF40001B04D3 /* TextEditorViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BDC3D31FD4DF40001B04D3 /* TextEditorViewControllerTests.swift */; };
+		E3BDC3D61FD4DF60001B04D3 /* TextEditorWindowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BDC3D51FD4DF60001B04D3 /* TextEditorWindowControllerTests.swift */; };
+		E3BDC3D81FD4DF78001B04D3 /* LineNumbersRulerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BDC3D71FD4DF78001B04D3 /* LineNumbersRulerViewTests.swift */; };
 		E3C9E19A1FD221D100A23A6F /* WebToolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C9E1991FD221D100A23A6F /* WebToolsUITests.swift */; };
 		E3D99DE21FA58A14007F4B1D /* libCSS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E37824A91FA4D8BE007E41DD /* libCSS.a */; };
 		E3D99DE41FA58BD5007F4B1D /* cssprettyprint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E30D27081F2EC08A00AD9CA9 /* cssprettyprint.h */; };
@@ -191,6 +194,9 @@
 		E3BCF0F31FCB3A34001A26F5 /* WebCodeDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCodeDocument.swift; sourceTree = "<group>"; };
 		E3BCF0F51FCBBB09001A26F5 /* TextEditorWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorWindowController.swift; sourceTree = "<group>"; };
 		E3BDC3D11FD4DD58001B04D3 /* WebCodeDocumentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCodeDocumentTests.swift; sourceTree = "<group>"; };
+		E3BDC3D31FD4DF40001B04D3 /* TextEditorViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorViewControllerTests.swift; sourceTree = "<group>"; };
+		E3BDC3D51FD4DF60001B04D3 /* TextEditorWindowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorWindowControllerTests.swift; sourceTree = "<group>"; };
+		E3BDC3D71FD4DF78001B04D3 /* LineNumbersRulerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumbersRulerViewTests.swift; sourceTree = "<group>"; };
 		E3C9E1971FD221D100A23A6F /* WebToolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebToolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C9E1991FD221D100A23A6F /* WebToolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebToolsUITests.swift; sourceTree = "<group>"; };
 		E3C9E19B1FD221D100A23A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -264,6 +270,9 @@
 			isa = PBXGroup;
 			children = (
 				E316E07E1FC8E1D100245E73 /* WebToolsTests.swift */,
+				E3BDC3D31FD4DF40001B04D3 /* TextEditorViewControllerTests.swift */,
+				E3BDC3D51FD4DF60001B04D3 /* TextEditorWindowControllerTests.swift */,
+				E3BDC3D71FD4DF78001B04D3 /* LineNumbersRulerViewTests.swift */,
 				E3BDC3D11FD4DD58001B04D3 /* WebCodeDocumentTests.swift */,
 				E316E0801FC8E1D200245E73 /* Info.plist */,
 			);
@@ -712,8 +721,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3BDC3D81FD4DF78001B04D3 /* LineNumbersRulerViewTests.swift in Sources */,
+				E3BDC3D41FD4DF40001B04D3 /* TextEditorViewControllerTests.swift in Sources */,
 				E3BDC3D21FD4DD58001B04D3 /* WebCodeDocumentTests.swift in Sources */,
 				E316E07F1FC8E1D100245E73 /* WebToolsTests.swift in Sources */,
+				E3BDC3D61FD4DF60001B04D3 /* TextEditorWindowControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
