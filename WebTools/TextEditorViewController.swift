@@ -19,9 +19,9 @@ final class TextEditorViewController: NSViewController, NSTextViewDelegate {
     /// The default `NSFont` applied to all text in `textView`.
     let defaultFont = NSFont(name: "Menlo", size: 11.0)
     
-    var sourceCodeText: String = "" {
+    var sourceCodeText: NSString = "" {
         didSet {
-            textView.string = sourceCodeText
+            textView.string = sourceCodeText as String
         }
     }
     
@@ -34,7 +34,7 @@ final class TextEditorViewController: NSViewController, NSTextViewDelegate {
     }
     
     override func viewDidLoad() {
-        textView.string = sourceCodeText
+        textView.string = sourceCodeText as String
         textView.font = defaultFont
         
         guard let scrollView = textView.enclosingScrollView else {

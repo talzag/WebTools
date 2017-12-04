@@ -17,7 +17,7 @@ class TextEditorWindowController: NSWindowController {
     }
     
     /// The content of this controller's `document`.
-    var sourceCodeText: String {
+    var sourceCodeText: NSString {
         get {
             return textEditorViewController?.sourceCodeText ?? ""
         }
